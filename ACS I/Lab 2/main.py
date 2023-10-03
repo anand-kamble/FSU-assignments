@@ -64,7 +64,7 @@ class PageRank():
         return (matrix/np.linalg.norm(matrix)).copy()
 
 
-rank = PageRank(5, debug=True)
+rank = PageRank(5)
 
 print("Solution Method 1 \n", rank.getRanksMethod_1())
 print("Solution Method 2 \n", rank.getRanksMethod_2())
