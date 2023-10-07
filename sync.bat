@@ -1,4 +1,5 @@
 @echo off
+git status
 set /p userInput= Git cha msg type kar : 
 
 echo You entered: %userInput%
@@ -9,7 +10,7 @@ echo SomeCommand %userInput%
 
 git add .
 git commit -m " %userInput% "
-
+git push origin main
 REM Add more commands as needed
 
 pause
