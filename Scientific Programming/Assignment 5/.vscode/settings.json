@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "functional": "cpp",
+        "xstring": "cpp",
+        "string": "cpp",
+        "ostream": "cpp",
+        "stdexcept": "cpp",
+        "any": "cpp",
+        "iostream": "cpp",
+        "locale": "cpp",
+        "thread": "cpp",
+        "xlocale": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\91911\\Documents\\Codes\\FSU\\Scientific Programming\\Assignment 5\\bin",
+            "binaryPath": "c:\\Users\\91911\\Documents\\Codes\\FSU\\Scientific Programming\\Assignment 5\\bin\\a.out",
+            "binaryArgs": []
+        }
+    ]
+}

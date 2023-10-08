@@ -231,48 +231,48 @@ public:
         }
     }
 
-    /**
-     * @brief Calculates the total surface area of all polygons surrounding each vertex and writes the result to a file.
-     *
-     * @param filename Name of the output file.
-     */
-    void SurroundingAreaForVertex(const char *filename)
-    {
-        try
+        /**
+         * @brief Calculates the total surface area of all polygons surrounding each vertex and writes the result to a file.
+         *
+         * @param filename Name of the output file.
+         */
+        void SurroundingAreaForVertex(const char *filename)
         {
-            
-            cout << "Area of surrounding polygons will be saved in file : " << filename << endl;
-            printf("Calculating area of surrounding polygons : [ %d / %d]\n", 0, numberOfPoints);
-            ofstream outfile(filename);
-            if (Debug)
-                printf("Opening File : %s\n", filename);
-            cout.rdbuf(outfile.rdbuf());
-            double surfaceArea;
-            for (int i = 0; i < numberOfPoints; i++)
+            try
             {
-                surfaceArea = 0.0;
-                for (auto polygon : polygons)
+                
+                cout << "Area of surrounding polygons will be saved in file : " << filename << endl;
+                printf("Calculating area of surrounding polygons : [ %d / %d]\n", 0, numberOfPoints);
+                ofstream outfile(filename);
+                if (Debug)
+                    printf("Opening File : %s\n", filename);
+                cout.rdbuf(outfile.rdbuf());
+                double surfaceArea;
+                for (int i = 0; i < numberOfPoints; i++)
                 {
-                    if (i == polygon[0] || i == polygon[1] || i == polygon[2])
+                    surfaceArea = 0.0;
+                    for (auto polygon : polygons)
                     {
-                        surfaceArea += areaOfTriangle(points[polygon[0]], points[polygon[1]], points[polygon[2]]);
+                        if (i == polygon[0] || i == polygon[1] || i == polygon[2])
+                        {
+                            surfaceArea += areaOfTriangle(points[polygon[0]], points[polygon[1]], points[polygon[2]]);
+                        }
                     }
+                    cout << surfaceArea << endl;
+                    printf("\x1b[A");
+                    printf("Calculating area of surrounding polygons : [ %d / %d]\n", i+1, numberOfPoints);
                 }
-                cout << surfaceArea << endl;
-                printf("\x1b[A");
-                printf("Calculating area of surrounding polygons : [ %d / %d]\n", i+1, numberOfPoints);
+                outfile.close();
+                if (Debug)
+                    printf("Closing File : %s\n", filename);
+                cout.rdbuf(originalCoutBuffer);
+                cout << "-----------------------------------------------------------------" << endl;
             }
-            outfile.close();
-            if (Debug)
-                printf("Closing File : %s\n", filename);
-            cout.rdbuf(originalCoutBuffer);
-            cout << "-----------------------------------------------------------------" << endl;
+            catch (...)
+            {
+                error("Failed to calculate surrounding areas at vertex.\n");
+            }
         }
-        catch (...)
-        {
-            error("Failed to calculate surrounding areas at vertex.\n");
-        }
-    }
 
     /**
      * @brief Calculates the length of edges in each polygon and saves the results to a file.
