@@ -37,6 +37,7 @@ private:
   int numberOfPolygons;
   vector<vector<float>> points;
   vector<vector<int>> polygons;
+  streambuf *originalCoutBuffer;
 
   void debug(string msg);
 
@@ -47,6 +48,8 @@ private:
   any errorHandler(function<any()> callback);
 
   vector<string> split(const string &toSplit, char separator = ' ');
+
+  double edgeLength(vector<float> p1, vector<float> p2);
 };
 
 #endif
