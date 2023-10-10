@@ -1,5 +1,4 @@
 @echo off
-git status
 set /p userInput= Git cha msg type kar : 
 
 echo You entered: %userInput%
