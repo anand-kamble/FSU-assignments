@@ -32,9 +32,6 @@ EXE_PATH = $(BIN_DIR)/$(EXE_NAME)
 # Targets
 all: $(EXE_PATH) 
 
-test: MAIN_SRC = $(SRC_DIR)/test.cpp
-test: $(EXE_PATH)
-
 $(EXE_PATH): $(MAIN_OBJ) $(ARRAY_PATH)
 	@mkdir -p $(BIN_DIR)
 	$(CC) $(CFLAGS) -o $@ $(MAIN_OBJ) -L$(LIB_DIR) -lArray
@@ -47,7 +44,7 @@ $(MAIN_OBJ): $(MAIN_SRC)
 
 $(ARRAY_PATH): $(ARRAY_OBJ)
 	@mkdir -p $(LIB_DIR)
-	ar rcs $@ $(ARRAY_OBJ) $(TRIANGLE_OBJ)
+	ar rcs $@ $(ARRAY_OBJ)
 
 $(ARRAY_OBJ): $(ARRAY_SRC) $(ARRAY_HEADER)
 	@mkdir -p $(OBJ_DIR)

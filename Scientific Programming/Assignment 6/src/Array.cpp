@@ -33,6 +33,11 @@ Array::Array(int size)
     this->data = new int[this->capacity];
 }
 
+/**
+ * @brief Copy constructor for Array class.
+ *        Creates a new array as a copy of the provided array.
+ * @param other The array to be copied.
+ */
 Array::Array(const Array &other) : numberOfElements(other.numberOfElements),
                                    capacity(other.capacity)
 {
@@ -43,6 +48,12 @@ Array::Array(const Array &other) : numberOfElements(other.numberOfElements),
     }
 }
 
+/**
+ * @brief Assignment operator for Array class.
+ *        Assigns the content of the provided array to this array.
+ * @param other The array to be assigned.
+ * @return A reference to the modified array.
+ */
 Array &Array::operator=(const Array &other)
 {
     if (this != &other)
@@ -59,6 +70,11 @@ Array &Array::operator=(const Array &other)
     return *this;
 }
 
+/**
+ * @brief Adds a new element to the end of the array.
+ *        If the array is full, it doubles its capacity before adding the element.
+ * @param value The value to be added to the array.
+ */
 void Array::push_back(int value)
 {
     if (this->numberOfElements == this->capacity)
@@ -81,6 +97,11 @@ void Array::push_back(int value)
     return;
 }
 
+/**
+ * @brief Removes the last element from the array.
+ *        If the number of elements becomes less than half of the capacity,
+ *        it reduces the capacity by half to conserve memory.
+ */
 void Array::pop_back()
 {
     if (this->numberOfElements > 0)
@@ -133,6 +154,12 @@ void Array::remove(int index)
     }
 }
 
+/**
+ * @brief Removes the element at the specified index from the array.
+ *        If the number of elements becomes less than half of the capacity,
+ *        it reduces the capacity by half to conserve memory.
+ * @param index The index of the element to be removed.
+ */
 void Array::insert(int value, int index)
 {
     if (index < 0 || index > this->numberOfElements)
@@ -166,16 +193,27 @@ void Array::insert(int value, int index)
     ++this->numberOfElements;
 }
 
+/**
+ * @brief Gets the current capacity of the array.
+ * @return The current capacity of the array.
+ */
 int Array::getCapacity() const
 {
     return this->capacity;
 }
 
+/**
+ * @brief Gets the current number of elements in the array.
+ * @return The current number of elements in the array.
+ */
 int Array::size() const
 {
     return this->numberOfElements;
 }
 
+/**
+ * @brief Clears the array by deallocating memory and resetting size and capacity.
+ */
 void Array::clear()
 {
     delete[] data;
