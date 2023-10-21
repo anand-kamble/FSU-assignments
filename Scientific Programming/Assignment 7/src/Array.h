@@ -1,6 +1,7 @@
-#include "Matrix.cpp"
+#include <iostream>
 
-class Array : public Matrix
+using namespace std;
+class Array
 {
 public:
     int *data;
@@ -15,21 +16,25 @@ public:
 
     Array &operator=(const Array &);
 
-    void setArrayShape(int, int);
+    friend ostream &operator<<(ostream &in, Array &m);
 
-    void push_back(int value);
+    int *operator[](int);
+
+    void push_back(int,int,int,int);
 
     void pop_back();
 
     void remove(int index);
 
-    void insert(int value, int index);
+    void insert(int, int, int, int, int);
 
     int getCapacity() const;
+
     int size() const;
 
     void clear();
 
+    void print();
 private:
     int numberOfElements;
 
