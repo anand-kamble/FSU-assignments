@@ -2,8 +2,6 @@
 #include <cmath>
 #include "Array.h"
 
-// #define A(x, y, z) (A[(x * n) + y])
-
 using namespace std;
 
 Array::Array()
@@ -50,12 +48,45 @@ Array &Array::operator=(const Array &other)
     return *this;
 }
 
+Array &Array::operator*(const Array &other)
+{
+    if (this->numberOfElements == other.numberOfElements)
+    {
+        Array &r = *(new Array(this->numberOfElements));
+        for (int i = 0; i < this->numberOfElements; i++)
+        {
+            r.push_back(this->data[i * 4] * other.data[i * 4] + (this->data[i * 4 + 1] * other.data[i * 4 + 2]), this->data[i * 4] * other.data[i * 4 + 1] + (this->data[i * 4 + 1] * other.data[i * 4 + 3]), this->data[i * 4 + 2] * other.data[i * 4] + (this->data[i * 4 + 3] * other.data[i * 4 + 2]), this->data[i * 4 + 2] * other.data[i * 4 + 1] + (this->data[i * 4 + 3] * other.data[i * 4 + 3]));
+        }
+        return r;
+    }
+    return *this;
+}
+
+int Array::operator%(const Array &other)
+{
+    if (this->numberOfElements == other.numberOfElements)
+    {
+        Array &r = *(new Array(this->numberOfElements));
+        for (int i = 0; i < this->numberOfElements; i++)
+        {
+            r.push_back(this->data[i * 4] * other.data[i * 4] + (this->data[i * 4 + 1] * other.data[i * 4 + 2]), this->data[i * 4] * other.data[i * 4 + 1] + (this->data[i * 4 + 1] * other.data[i * 4 + 3]), this->data[i * 4 + 2] * other.data[i * 4] + (this->data[i * 4 + 3] * other.data[i * 4 + 2]), this->data[i * 4 + 2] * other.data[i * 4 + 1] + (this->data[i * 4 + 3] * other.data[i * 4 + 3]));
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < this->numberOfElements * 4; i++)
+        {
+            sum += this->data[i];
+        }
+
+        return sum;
+    }
+    return 0;
+}
+
 int *Array::operator[](int index)
 {
-    return new int[4]{this->data[index],
-                      this->data[index + 1],
-                      this->data[index + 2],
-                      this->data[index + 3]};
+    return &this->data[index * 4];
 }
 
 void Array::push_back(int v1, int v2, int v3, int v4)
@@ -211,20 +242,31 @@ void Array::print()
 }
 
 ostream &operator<<(ostream &in, Array &m)
+{
+    if (!m.numberOfElements)
     {
-        if (!m.numberOfElements)
-        {
-            in << "Matrix is empty" << endl;
-            return in;
-        }
-        for (unsigned int i = 0; i < m.numberOfElements; i++)
-        {
-            in << "|" << m.data[(i * 4)] << " ";
-            in <<  m.data[(i * 4) + 1] << "|";
-            in << endl;
-            in << "|" << m.data[(i * 4) + 2] << " ";
-            in <<  m.data[(i * 4) + 3] << "|" << endl;
-            in << endl;
-        };
+        in << "Matrix is empty" << endl;
         return in;
+    }
+    for (int i = 0; i < m.numberOfElements; i++)
+    {
+        in << "|" << m.data[(i * 4)] << " ";
+        in << m.data[(i * 4) + 1] << "|";
+        in << endl;
+        in << "|" << m.data[(i * 4) + 2] << " ";
+        in << m.data[(i * 4) + 3] << "|" << endl;
+        in << endl;
     };
+    return in;
+};
+
+Array &operator*(float value, Array &m)
+{
+    if (!m.numberOfElements)
+        return m;
+    for (int i = 0; i < m.numberOfElements * 4; ++i)
+    {
+        m.data[i] = m.data[i] * value;
+    }
+    return m;
+}
