@@ -4,6 +4,8 @@
 
 int main()
 {
+(new Test("Test int"))->Expect(2).ToBe(2);
+
     // Create an array with default constructor and test its capacity, which should be 0.
     Array myArray;
     (new Test("Constructor creates an Array with capacity 0."))
@@ -91,7 +93,7 @@ int main()
 
     (new Test("Array can be multiplied by float."))
         ->ExpectMatrix(myArray[2])
-        .ToBe(202, 202, 202, 202);
+        .ToBe(202, 202, 202, 22);
 
     // Pushing some elements into Array 2 to make its length equal to Array 1.
     myArray2.push_back(10, 10, 10, 10);
