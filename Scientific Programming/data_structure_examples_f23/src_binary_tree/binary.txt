@@ -1,0 +1,22 @@
+
+
+    root                           root2
+	                              lft1   rgt1
+ left    right
+lf  rg  lf    rg
+
+If a node has no children, it is a leaf, which can be empty or not. 
+
+Nodes contain information: 
+  - float, int, string, a class of any type
+
+Given an integer list, 
+  Construct a sorting algorithm O(log(n)) with binary tree
+
+
+Step 1: populate the tree
+Step 2: search for an arbitary integer
+
+
+# bt.insert(5)
+root: 

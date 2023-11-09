@@ -1,0 +1,29 @@
+//----------------------------------------------------------------------
+What is the difference between `NULL` and `nulptr`?
+
+Both NULL and nullptr are used in C++ to indicate a pointer that doesn't point to a valid memory location. However, they differ in their underlying types and usage:
+
+NULL:
+It is a macro that often represents the integer 0.
+In C, NULL is commonly used to represent a null pointer.
+In C++, NULL can also be used, but there are situations where its usage can be ambiguous or problematic, especially with function overloading.
+Because NULL is an integer type, assigning it to a pointer is an implicit conversion.
+nullptr:
+Introduced in C++11, nullptr is a new keyword that represents a null pointer constant of type std::nullptr_t.
+It's type-safe and can only be assigned to a pointer or a pointer-like object.
+It helps avoid ambiguities, especially in situations like function overloading. For instance, if you have two overloaded functions, one taking an int and another taking a pointer, passing NULL (which is 0) could be ambiguous, but passing nullptr is clear.
+Using nullptr is the recommended way to represent a null pointer in modern C++.
+
+
+void foo(int x) { /*...*/ }
+void foo(char* x) { /*...*/ }
+
+int main() {
+    // This call is ambiguous because NULL is an integer, so both foo() functions are candidates:
+    // foo(NULL);  // This would cause a compilation error.
+
+    // This call is clear because nullptr can only be a pointer:
+    foo(nullptr);  // Calls the second foo() without ambiguity.
+}
+
+//----------------------------------------------------------------------
