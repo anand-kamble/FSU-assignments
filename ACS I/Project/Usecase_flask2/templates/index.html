@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Drug Recommendation System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+    html,
+    body {
+      margin: 0%;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgb(250, 250, 250);
+      background-image: url("static/images/pharma.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    textarea[type="text"],
+    input[type="text"],
+    input[type="number"] {
+      width: 18vw;
+      border-radius: 5px;
+      height: 2vh;
+      padding: 1vh 1vw;
+      font-size: medium;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 1px solid rgb(48, 48, 48);
+    }
+
+    textarea[type="text"] {
+      height: 10vh;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    select {
+      width: 20vw; /* Adjust the width as needed */
+      padding: 10px;
+      font-size: medium;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: medium;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: rgb(48, 48, 48);
+      margin-bottom: 10px;
+    }
+
+    .topMargins {
+      margin-top: 2vh;
+    }
+
+    .predict-btn {
+      margin-top: 5vh;
+      width: 20vw;
+      height: 5vh;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: larger;
+      background-color: rgb(48, 48, 48);
+      color: aliceblue;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .opacity-1 {
+      opacity: 1;
+    }
+
+    .disabled-btn {
+      background-color: rgb(104, 104, 104) !important;
+      color: rgb(145, 145, 145) !important;
+      cursor: not-allowed !important;
+    }
+
+    .predict-btn:hover {
+      background-color: rgb(0, 0, 0);
+    }
+
+    .title {
+      font-size: 4vh;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 5vh;
+      font-weight: bolder;
+    }
+
+    #Main-form {
+      padding: 5vh 10vw;
+      backdrop-filter: blur(5px);
+    }
+    #inputHolder {
+      width: 40vw;
+    }
+    #StateDisplay {
+      width: 40vw;
+      height: 70vh;
+      word-wrap: break-word;
+      position: relative;
+    }
+
+    #state-output {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.4rem;
+      transition: 0.5s;
+      margin-top: 1vh;
+      position: absolute;
+    }
+
+    #error {
+      visibility: hidden;
+      color: red;
+    }
+
+    #Feedback {
+      position: absolute;
+      margin-top: 40vh;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+  <body>
+    <div id="Main-form">
+      <p class="title">Drug Recommendation System</p>
+      <div class="flex-row">
+        <div id="inputHolder">
+          <form id="prediction-form">
+            <div class="topMargins">
+              <label for="race">Race *</label><br />
+              <select id="race" name="race" required>
+                <option value="" disabled selected>Select Race</option>
+                <option value="AfricanAmerican">African American</option>
+                <option value="Asian">Asian</option>
+                <option value="Caucasian">Caucasian</option>
+                <option value="Hispanic">Hispanic</option>
+                <option value="Other">Other</option></select
+              ><br />
+            </div>
+            <div class="topMargins">
+              <label for="gender">Gender *</label><br />
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option></select
+              ><br />
+            </div>
+            <div class="topMargins">
+              <label for="age">Age *</label><br />
+              <input type="number" id="age" name="age" required /><br />
+            </div>
+            <div class="topMargins">
+              <label for="weight">Weight *</label><br />
+              <input type="number" id="weight" name="weight" required /><br />
+            </div>
+            <div class="topMargins">
+              <label for="A1C_result">A1C Result *</label><br />
+              <select id="A1C_result" name="A1C_result" required>
+                <option value="" disabled selected>Select A1C result</option>
+                <option value=">7">&gt;7</option>
+                <option value=">8">&gt;8</option>
+                <option value="Norm">Norm</option></select
+              ><br />
+            </div>
+            <div class="topMargins">
+              <label for="max_glu_serum">Max Glucose Serum Level *</label><br />
+              <select id="max_glu_serum" name="max_glu_serum" required>
+                <option value="" disabled selected>
+                  Select Max Glucose Serum Level
+                </option>
+                <option value=">200">&gt;200</option>
+                <option value=">300">&gt;300</option>
+                <option value="Norm">Norm</option>
+                <option value="None">None</option></select
+              ><br />
+            </div>
+            <div class="topMargins">
+              <label for="symptoms">Symptoms *</label><br />
+              <!-- <input type="text" id="symptoms" name="symptoms" required /><br /> -->
+              <textarea
+                type="text"
+                id="symptoms"
+                name="symptoms"
+                required
+              ></textarea>
+            </div>
+          </form>
+          <button type="submit" id="predict-btn" class="predict-btn">
+            Predict
+          </button>
+          <p id="error">Please fill in all the required values.</p>
+        </div>
+        <div id="StateDisplay">
+          <h2>Prediction Result :</h2>
+          <hr style="border: 1px solid black" />
+          <p id="state-output"></p>
+          <div id="Feedback">
+            <label for="symptoms">Feedback *</label><br />
+            <!-- <input type="text" id="Feedback" name="symptoms" required /><br /> -->
+            <textarea
+              type="text"
+              id="Feedback_input"
+              name="Feedback"
+              required
+              style="width: 38vw"
+            ></textarea>
+            <button id="feedback-btn" class="predict-btn feedback-btn opacity-0" style="display: none;">
+              Submit Feedback
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const formHandler = () => {
+      const State = {
+        symptoms: null,
+        max_glu_serum: null,
+        A1C_result: null,
+        weight: null,
+        age: null,
+        gender: null,
+        race: null,
+      };
+
+      const convertToCSV = (arr) => {
+        const array = [Object.keys(arr[0])].concat(arr);
+
+        return array
+          .map((it) => {
+            return Object.values(it).toString();
+          })
+          .join("\n");
+      };
+
+      const outputElement = document.getElementById("state-output");
+
+      const setOutput = (msg) => {
+        if (outputElement && msg) outputElement.innerHTML = msg;
+      };
+
+      const button = document.getElementById("predict-btn");
+      const errorMsg = document.getElementById("error");
+
+      let buttonClicked = false;
+
+      const form = document.getElementById("prediction-form");
+      const Feedback = document.getElementById("Feedback_input");
+      const SubmitFeedbackBtn = document.getElementById("feedback-btn");
+
+      let FeedBackText = "";
+
+      Feedback.addEventListener("input", (e) => {
+        FeedBackText = e.target.value;
+      });
+
+      SubmitFeedbackBtn.addEventListener("click", () => {
+        submitFeedback();
+      });
+
+      button.addEventListener("click", () => {
+        buttonClicked = true;
+        updateButton();
+        console.log(JSON.stringify(Object.fromEntries(new FormData(form))));
+        if (
+          !Object.keys(State)
+            .map((key) => State[key] === null || State[key] === "")
+            .includes(true)
+        )
+          submitForm();
+      });
+
+      const updateButton = () => {
+        if (
+          Object.keys(State)
+            .map((key) => State[key] === null || State[key] === "")
+            .includes(true)
+        ) {
+          button.classList.add("disabled-btn");
+          errorMsg.style.visibility = "visible";
+        } else {
+          button.classList.remove("disabled-btn");
+          errorMsg.style.visibility = "hidden";
+        }
+      };
+
+      Object.keys(State).forEach((v) => {
+        document.getElementById(v).addEventListener("input", (e) => {
+          State[v] = e.target.value;
+          setOutput();
+          if (buttonClicked) updateButton();
+        });
+      });
+      let result;
+      const submitFeedback = async () => {
+        const response = await fetch("/logresults", {
+          method: "POST",
+          body: convertToCSV([{ ...State, ...result, feedback: FeedBackText }]),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      };
+
+      const submitForm = async () => {
+        const response = await fetch("/preprocess", {
+          method: "POST",
+          body: JSON.stringify(State),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          result = await response.json();
+          setOutput(
+            `Recommended Drug : <b>${result.Drug_recommended}</b> <br/> Diabetes Type : <b>${result.Diabetes_type}</b> <br/> Description : <b>${result.Description}</b>`
+          );
+          SubmitFeedbackBtn.style.display = "block";
+          SubmitFeedbackBtn.classList.remove("opacity-0");
+        } else {
+          setOutput("Error predicting");
+        }
+      };
+    };
+
+    window.onload = formHandler;
+  </script>
+</html>
