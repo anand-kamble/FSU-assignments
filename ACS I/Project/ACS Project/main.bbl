@@ -1,0 +1,130 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{wiki_ai}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sampling (signal processing), \url{https://en.wikipedia.org/wiki/Sampling_(signal_processing)}}
+      \field{year}{2023}
+    \endentry
+    \entry{wiki_us}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Upsampling, \url{https://en.wikipedia.org/wiki/Upsampling}}
+      \field{year}{2023}
+    \endentry
+    \entry{sampleRates}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e658b7b1773d84fa42d8f2f5da7acbf0}{%
+           family={Hass},
+           familyi={H\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Indiana University}%
+      }
+      \strng{namehash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \strng{fullhash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \strng{bibnamehash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \strng{authorbibnamehash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \strng{authornamehash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \strng{authorfullhash}{e658b7b1773d84fa42d8f2f5da7acbf0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Computer Music. \url{https://cmtext.indiana.edu/digital_audio/chapter5_rate.php}}
+      \field{year}{2023}
+    \endentry
+    \entry{yiruma}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=85b5b399816c597ca77558084f54f539}{%
+           family={Studio},
+           familyi={S\bibinitperiod},
+           given={Universal\bibnamedelima Music},
+           giveni={U\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{85b5b399816c597ca77558084f54f539}
+      \strng{fullhash}{85b5b399816c597ca77558084f54f539}
+      \strng{bibnamehash}{85b5b399816c597ca77558084f54f539}
+      \strng{authorbibnamehash}{85b5b399816c597ca77558084f54f539}
+      \strng{authornamehash}{85b5b399816c597ca77558084f54f539}
+      \strng{authorfullhash}{85b5b399816c597ca77558084f54f539}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Solo, \url{https://www.prostudiomasters.com/album/page/104572}}
+      \field{year}{September 24, 2021}
+    \endentry
+    \entry{wiki_rmsd}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Root-mean-square deviation, \url{https://en.wikipedia.org/wiki/Root-mean-square_deviation}}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
