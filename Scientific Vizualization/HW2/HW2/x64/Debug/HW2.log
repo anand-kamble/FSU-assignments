@@ -1,0 +1,3 @@
+﻿  glad.c
+  main.cpp
+LINK : fatal error LNK1104: cannot open file 'modules\lib\glfw3.lib'
