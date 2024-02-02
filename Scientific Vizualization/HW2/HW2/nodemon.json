@@ -1,0 +1,5 @@
+{
+    "watch": ["*.*"],
+    "ext": "js, cpp, vs, fs",
+    "exec": "make && make run"
+  }
