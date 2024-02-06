@@ -1,6 +1,20 @@
 {
     "files.associations": {
         "any": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "random": "cpp",
+        "xutility": "cpp",
+        "chrono": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "cmath": "cpp"
     }
 }
