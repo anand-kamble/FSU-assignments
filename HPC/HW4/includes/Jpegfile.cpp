@@ -10,7 +10,6 @@
 //  See jpegfile.h for usage.
 //
 ////////////////////////////////////////////////////////////
-#include "stdafx.h"
 
 #include "Jpegfile.h"
 
@@ -19,7 +18,7 @@
 
 extern "C" {
 //  #define HAVE_BOOLEAN
-  #include "../JpegLib/jpeglib.h"
+  #include "JpegLib/jpeglib.h"
 }
 
 #pragma warning(disable: 4211)  // nonstandard extension used
