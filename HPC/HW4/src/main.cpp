@@ -54,153 +54,151 @@ typedef double DIST; // Type for distance between pixels
  */
 DIST distanceBetweenPexels(BYTE *dataBuf, int p1, int *generator)
 {
-    BYTE *pRed1, *pGrn1, *pBlu1;
-    pRed1 = dataBuf + p1 * 3;
-    pGrn1 = dataBuf + p1 * 3 + 1;
-    pBlu1 = dataBuf + p1 * 3 + 2;
+	BYTE *pRed1, *pGrn1, *pBlu1;
+	pRed1 = dataBuf + p1 * 3;
+	pGrn1 = dataBuf + p1 * 3 + 1;
+	pBlu1 = dataBuf + p1 * 3 + 2;
 
-    int pRed2, pGrn2, pBlu2;
-    pRed2 = generator[0];
-    pGrn2 = generator[1];
-    pBlu2 = generator[2];
+	int pRed2, pGrn2, pBlu2;
+	pRed2 = generator[0];
+	pGrn2 = generator[1];
+	pBlu2 = generator[2];
 
-    return sqrt(pow((int)(*pRed1 - pRed2), 2) + pow((int)(*pGrn1 - pGrn2), 2) + pow((int)(*pBlu1 - pBlu2), 2));
+	return sqrt(pow((int)(*pRed1 - pRed2), 2) + pow((int)(*pGrn1 - pGrn2), 2) + pow((int)(*pBlu1 - pBlu2), 2));
 }
 
-/**
- * @brief The main function of the program.
- *
- * This function performs image segmentation using the k-means clustering algorithm.
- * It reads an image file, divides the pixels into k groups, and iteratively updates
- * the group centroids until convergence. Finally, it colors the pixels based on the
- * average color of each group and saves the segmented image to a file.
- *
- * @return int The exit status of the program.
- */
 int main()
 {
-    // Variables to store image properties and pixel data
-    UINT height;
-    UINT width;
-    BYTE *dataBuf;
+	// Variables to store image properties and pixel data
+	UINT height;
+	UINT width;
+	BYTE *dataBuf;
 
-    DIST i = 0;
+	DIST i = 0;
 
-    // Read the file to dataBuf with RGB format. The width and height of the image are stored in the respective variables.
-    dataBuf = JpegFile::JpegFileToRGB("Images/test3.jpg", &width, &height);
+	// Read the file to dataBuf with RGB format. The width and height of the image are stored in the respective variables.
+	dataBuf = JpegFile::JpegFileToRGB("Images/test.jpg", &width, &height);
 
-    const int N = height * width; // Total number of pixels
+	const int N = height * width; // Total number of pixels
 
-    // Set the parameters for the k-means algorithm
-    const int k = 5;           // Number of clusters
-    const int ITERATIONS = 10; // Number of iterations for the k-means algorithm
+	// Set the parameters for the k-means algorithm
+	const int k = 20;		   // Number of clusters
+	const int ITERATIONS = 10; // Number of iterations for the k-means algorithm
 
-    Group *groups = new Group[k]; // Array to store groups
+	Group *groups = new Group[k]; // Array to store groups
 
-    for (int i = 0; i < k; i++)
-    {
-        groups[i].setGenerator(dataBuf[(((N * 3) / k) * i)],
-                               dataBuf[(((N * 3) / k) * i) + 1],
-                               dataBuf[(((N * 3) / k) * i) + 2]);
+	for (int i = 0; i < k; i++)
+	{
+		groups[i].setGenerator(dataBuf[(((N * 3) / k) * i)],
+							   dataBuf[(((N * 3) / k) * i) + 1],
+							   dataBuf[(((N * 3) / k) * i) + 2]);
 
-        groups[i].setpixels((int *)malloc(sizeof(int) * (N * 3))); // N * 3 is the maximum number of pixels,
-        // using max number since there can be a situation where all the pixels are in one group.
-    }
+		groups[i].setpixels((int *)malloc(sizeof(int) * (N))); // N is the maximum number of pixels,
+		// using max number since there can be a situation where all the pixels are in one group.
+	}
 
-    int NUM_THREADS = 32;                                  // Number of threads to use for parallelization
-    NUM_THREADS = min(NUM_THREADS, omp_get_max_threads()); // Make sure that we don't use more threads than available
-    omp_set_num_threads(NUM_THREADS);                      // Set the number of threads
+	int NUM_THREADS = 32;								   // Number of threads to use for parallelization
+	NUM_THREADS = min(NUM_THREADS, omp_get_max_threads()); // Make sure that we don't use more threads than available
+	omp_set_num_threads(NUM_THREADS);					   // Set the number of threads
 
-    double start = omp_get_wtime(); // Record the start time for benchmarking
+	double start = omp_get_wtime(); // Record the start time for benchmarking
 
-    for (int i = 0; i < ITERATIONS; i++)
-    {
+	for (int i = 0; i < ITERATIONS; i++)
+	{
 #pragma omp parallel
-        {
+		{
 #pragma omp for schedule(static)
-            for (int i = 0; i < k; i++)
-            {
-                groups[i].clearPixels();    // Clear the pixels in each group
-                groups[i].setPixelCount(0); // Set the pixel count of each group to 0
-            }
+			for (int i = 0; i < k; i++)
+			{
+				groups[i].clearPixels(); // Clear the pixels in each group
+			}
+// Using static in the following loop since a large number of N might slow down the process if dynamic scheduling is used.
+// Also for each pixel we are looping through all the groups to find the minimum distance.
+// Which should take same amount of time for each pixel.
 #pragma omp for schedule(static)
-            for (int i = 0; i < N; i++)
-            {
-                BYTE *pTest = dataBuf + i * 3;         // Pointer to the current pixel
-                DIST minimumDistance = INFINITY;       // Initialize the minimum distance to infinity
-                Group *minimumDistanceGroup = nullptr; // Pointer to the group with the minimum distance
-                for (int j = 0; j < k; j++)
-                {
-                    DIST distance = distanceBetweenPexels(dataBuf, i, groups[j].generator); // Compute the distance between the pixel and the generator of the group
-                    if (distance < minimumDistance)                                         // If the distance is less than the minimum distance
-                    {
-                        minimumDistance = distance;        // Update the minimum distance
-                        minimumDistanceGroup = &groups[j]; // Update the pointer to the group with the minimum distance
-                    }
-                }
-                if (minimumDistanceGroup != nullptr)
-                {
-                    minimumDistanceGroup->setPixelCount(minimumDistanceGroup->pixelCount + 1); // Increment the pixel count of the group with the minimum distance
-                    minimumDistanceGroup->addPixel(i);                                         // Add the pixel to the group with the minimum distance
-                }
-            }
+			for (int i = 0; i < N; i++)
+			{
+				DIST minimumDistance = INFINITY;	   // Initialize the minimum distance to infinity
+				Group *minimumDistanceGroup = nullptr; // Pointer to the group with the minimum distance
+				// Parallelize the following loop won't improve the performance since it take more time to spawn the parallel regions.
+				for (int j = 0; j < k; j++)
+				{
+					DIST distance = distanceBetweenPexels(dataBuf, i, groups[j].generator); // Compute the distance between the pixel and the generator of the group
+					if (distance < minimumDistance)											// If the distance is less than the minimum distance
+					{
+						minimumDistance = distance;		   // Update the minimum distance
+						minimumDistanceGroup = &groups[j]; // Update the pointer to the group with the minimum distance
+					}
+				}
+				if (minimumDistanceGroup != nullptr)
+				{
+					minimumDistanceGroup->setPixelCount(minimumDistanceGroup->pixelCount + 1); // Increment the pixel count of the group with the minimum distance
+					minimumDistanceGroup->addPixel(i);										   // Add the pixel to the group with the minimum distance
+				}
+			}
 
+// Using dynamic scheduling since the each group might contain different number of pixels.
 #pragma omp for schedule(dynamic)
-            for (int i = 0; i < k; i++)
-            {
-                int numOfPixels = groups[i].getPixelCount();            // Get the number of pixels in the group
-                long long int averageR = 0, averageG = 0, averageB = 0; // Initialize the average color of the group to 0
-                                                                        // #pragma omp parallel for schedule(static) reduction(+ : averageR, averageG, averageB)
-                for (int j = 0; j < numOfPixels; j++)
-                {
-                    BYTE *pTest = dataBuf + (groups[i].getpixels()[j] * 3); // Pointer to the current pixel
+			for (int i = 0; i < k; i++)
+			{
 
-                    // Compute the average color of the group
-                    averageR += (*pTest);       // Red
-                    averageG += (*(pTest + 1)); // Green
-                    averageB += (*(pTest + 2)); // Blue
-                }
+				int numOfPixels = groups[i].getPixelCount();			// Get the number of pixels in the group
+				long long int averageR = 0, averageG = 0, averageB = 0; // Initialize the average color of the group to 0
 
-                if (numOfPixels > 0) // If the group has pixels
-                {
-                    averageR /= numOfPixels;                              // Normalize the average color red of the group by dividing by the number of pixels
-                    averageG /= numOfPixels;                              // Normalize the average color green of the group by dividing by the number of pixels
-                    averageB /= numOfPixels;                              // Normalize the average color blue of the group by dividing by the number of pixels
-                    groups[i].setGenerator(averageR, averageG, averageB); // Update the generator of the group
-                    groups[i].average[0] = averageR;                      // Update the average color red of the group
-                    groups[i].average[1] = averageG;                      // Update the average color green of the group
-                    groups[i].average[2] = averageB;                      // Update the average color blue of the group
-                }
-            }
-// Color pixels based on group averages
+				/**I have commented out the following openmp directive since it is not improving the performance.
+				 * It might be due to the time required to spawn the parallel regions. */
+				// #pragma omp parallel for schedule(static) reduction(+ : averageR, averageG, averageB)
+
+				for (int j = 0; j < numOfPixels; j++)
+				{
+					BYTE *pTest = dataBuf + (groups[i].getpixels()[j] * 3); // Pointer to the current pixel
+
+					// Compute the average color of the group
+					averageR += (*pTest);		// Red
+					averageG += (*(pTest + 1)); // Green
+					averageB += (*(pTest + 2)); // Blue
+				}
+
+				if (numOfPixels > 0) // If the group has pixels
+				{
+					averageR /= numOfPixels;							  // Normalize the average color red of the group by dividing by the number of pixels
+					averageG /= numOfPixels;							  // Normalize the average color green of the group by dividing by the number of pixels
+					averageB /= numOfPixels;							  // Normalize the average color blue of the group by dividing by the number of pixels
+					groups[i].setGenerator(averageR, averageG, averageB); // Update the generator of the group
+					groups[i].average[0] = averageR;					  // Update the average color red of the group
+					groups[i].average[1] = averageG;					  // Update the average color green of the group
+					groups[i].average[2] = averageB;					  // Update the average color blue of the group
+				}
+			}
+			// Color pixels based on group averages
 #pragma omp for schedule(dynamic)
-            for (int i = 0; i < k; i++)
-            {
-                auto groupPixels = groups[i].getpixels();
-                auto pixelCount = groups[i].getPixelCount();
-                auto average = groups[i].average;
-                // #pragma omp for schedule(static) // private(i, groupPixels, pixelCount, average)
-                for (int j = 0; j < pixelCount; j++)
-                {
-                    auto pTest = dataBuf + (groupPixels[j] * 3);
-                    // std::cout << "Running" << endl;
-                    // Coloring the groups
-                    *pTest = average[0];
-                    *(pTest + 1) = average[1];
-                    *(pTest + 2) = average[2];
-                }
-            }
-        }
-    }
-    double end = omp_get_wtime();
+			for (int i = 0; i < k; i++)
+			{
+				auto groupPixels = groups[i].getpixels();
+				auto pixelCount = groups[i].getPixelCount();
+				auto average = groups[i].average;
+				for (int j = 0; j < pixelCount; j++)
+				{
+					auto pTest = dataBuf + (groupPixels[j] * 3);
+					*pTest = average[0];
+					*(pTest + 1) = average[1];
+					*(pTest + 2) = average[2];
+				}
+			}
+		}
+	}
 
-    std::cout << "\rTime for " << NUM_THREADS << " threads : " << end - start << endl;
+	// Record the end time for benchmarking
+	double end = omp_get_wtime();
 
-    // Write the segmented image to a file with the suffix "_seg"
-    JpegFile::RGBToJpegFile("test_seg.jpg", dataBuf, width, height, true, 100);
+	std::cout << "\rTime for " << NUM_THREADS << " threads : " << end - start << endl;
 
-    delete dataBuf;
-    delete[] groups;
+	// Write the segmented image to a file with the suffix "_seg"
+	JpegFile::RGBToJpegFile("test_seg.jpg", dataBuf, width, height, true, 100);
 
-    return 0;
+	// Free the memory allocated for the pixel data and groups
+	delete dataBuf;
+	delete[] groups;
+
+	return 0;
 }

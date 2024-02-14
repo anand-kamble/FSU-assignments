@@ -47,6 +47,7 @@ class Group
 public:
     int *pixels;
     int pixelCount;
+    int MaxPixelCount;
     int *generator;
     AVG average[3];
 
@@ -179,6 +180,14 @@ void Group::addPixel(int pixel)
 
 void Group::clearPixels()
 {
+    /**
+     * Commented since we can use the same array for the pixels and just reset the pixel count.
+     * This will save us from allocating and deallocating memory for each iteration.
+     * Which means we are just overwriting the pixels array with new values.
+     */
+
+    // this->pixels = (int *)calloc(this->MaxPixelCount, sizeof(int));
+
     this->pixelCount = 0;
 }
 
