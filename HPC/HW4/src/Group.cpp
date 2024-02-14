@@ -44,12 +44,10 @@ typedef long long int AVG;
  */
 class Group
 {
-private:
-    int *generator;
+public:
     int *pixels;
     int pixelCount;
-
-public:
+    int *generator;
     AVG average[3];
 
     /**

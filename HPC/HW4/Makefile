@@ -2,7 +2,7 @@
 CC = g++
 
 # Compiler flags
-CFLAGS = -std=c++23 -fopenmp
+CFLAGS = -std=c++17 -fopenmp
 
 # Directories
 SRC_DIR = src
