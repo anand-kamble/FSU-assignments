@@ -13,7 +13,7 @@ INC_DIR = includes
 MAIN_SRC = $(SRC_DIR)/main.cpp
 
 # Include files
-INC_FILES = $(INC_DIR)/Jpegfile.cpp
+# INC_FILES = $(INC_DIR)/Jpegfile.cpp
 
 # Executable
 EXE_NAME = test.x
@@ -24,7 +24,7 @@ all: $(EXE_PATH)
 
 $(EXE_PATH):
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) $(MAIN_SRC) $(INC_FILES) -o $(EXE_PATH) $(INC_DIR)/JpegLib/libjpeg.a
+	$(CC) $(CFLAGS) $(MAIN_SRC) -o $(EXE_PATH) 
 
 run: $(EXE_PATH) 
 	@echo "Running the program"
