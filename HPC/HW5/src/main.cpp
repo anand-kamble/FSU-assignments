@@ -50,7 +50,7 @@ bool isPrime(long long int num)
 
 // Function to insert primes in the binary tree
 // Function to insert primes in the binary tree
-void insertPrimes(TreeNode *&root, long long int n, long long int m, long long int level, long long int largestGapInNode)
+void insertPrimes(TreeNode *&root, long long int n, long long int m, long long int level, long long int &largestGapInNode)
 {
 	if (n > m)
 		return;
@@ -61,7 +61,7 @@ void insertPrimes(TreeNode *&root, long long int n, long long int m, long long i
 		root = newNode(mid, level);
 		insertPrimes(root->left, n, mid - 1, level + 1, largestGapInNode);
 		insertPrimes(root->right, mid + 1, m, level + 1, largestGapInNode);
-		largestGapInNode = max(max(root->data - n, m - root->data), max(root->data - n, m - root->data));
+		cout << "Prime: " << mid << " Level: " << level << endl;
 	}
 	else
 	{
@@ -75,11 +75,10 @@ void insertPrimes(TreeNode *&root, long long int n, long long int m, long long i
 			{
 
 				root = newNode(leftPrime, level);
-				if (root->level > 10)
+				if (/*pow(2, root->level)*/ root->level > 8 /*omp_get_num_threads()*/)
 				{
 					insertPrimes(root->left, n, leftPrime - 1, level + 1, largestGapInNode);
 					insertPrimes(root->right, leftPrime + 1, m, level + 1, largestGapInNode);
-					largestGapInNode = max(max(root->data - n, m - root->data), max(root->data - n, m - root->data));
 				}
 				else
 				{
@@ -91,9 +90,9 @@ void insertPrimes(TreeNode *&root, long long int n, long long int m, long long i
 					{
 						insertPrimes(root->right, leftPrime + 1, m, level + 1, largestGapInNode);
 					}
-					largestGapInNode = max(max(root->data - n, m - root->data), max(root->data - n, m - root->data));
-					break;
 				}
+
+				break;
 			}
 			leftPrime--;
 		}
@@ -104,12 +103,31 @@ void insertPrimes(TreeNode *&root, long long int n, long long int m, long long i
 			if (isPrime(rightPrime))
 			{
 				root = newNode(rightPrime, level);
-				insertPrimes(root->left, n, rightPrime - 1, level + 1, largestGapInNode);
-				insertPrimes(root->right, rightPrime + 1, m, level + 1, largestGapInNode);
-				
+				if (/*pow(2, root->level)*/ root->level > 8 /*omp_get_num_threads()*/)
+				{
+
+					insertPrimes(root->left, n, rightPrime - 1, level + 1, largestGapInNode);
+					insertPrimes(root->right, rightPrime + 1, m, level + 1, largestGapInNode);
+				}
+				else
+				{
+#pragma omp task
+					{
+						insertPrimes(root->left, n, rightPrime - 1, level + 1, largestGapInNode);
+					}
+#pragma omp task
+					{
+						insertPrimes(root->right, rightPrime + 1, m, level + 1, largestGapInNode);
+					}
+				}
+
 				break;
 			}
 			rightPrime++;
+		}
+		if (rightPrime - leftPrime > largestGapInNode)
+		{
+			largestGapInNode = rightPrime - leftPrime;
 		}
 	}
 }
@@ -155,8 +173,8 @@ int main()
 	// cout << "Enter the range [n, m]: ";
 	// cin >> n >> m;
 
-	n = 1;
-	m = 10000;
+	n = 11;
+	m = 50;
 
 	TreeNode *root = nullptr;
 
@@ -175,7 +193,7 @@ int main()
 
 		long long int largestGapInNode = 0;
 
-#pragma omp parallel reduction(max : largestGapInNode)
+#pragma omp parallel
 		{
 #pragma omp single nowait
 			{
@@ -187,12 +205,11 @@ int main()
 		// printBT(root);
 
 		double end = omp_get_wtime();
-
+		cout << "Largest prime gap: " << largestGapInNode << endl;
 		cout << "Time taken by " << NUM_THREADS << " threads : " << end - start << " seconds" << endl;
 	}
+	printBT(root);
 	cout << "Prime numbers between " << n << " and " << m << endl;
-
-	
 
 	return 0;
 }
