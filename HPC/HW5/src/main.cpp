@@ -44,117 +44,120 @@ bool isPrime(long long int num)
 	}
 	return true;
 }
+long long int insertPrimes(TreeNode *&root, long long int n, long long int m, long long int level, long long int &prev);
 
-// Declare a custom reduction for finding the maximum prime gap
-#pragma omp declare reduction(primeMax : struct TreeNode * : omp_out = (omp_in->largestGapInNode > omp_out->largestGapInNode) ? omp_in : omp_out)
+/**
+ * Below I have separated the left and right searching part from the original insertPrimes function.
+ * I did this since I was trying to run both parts on their own threads when the number of threads is large.
+ * To keep the variables intact I have passed them as reference.
+ */
+// Function to search prime numbers towards left
+void searchLeft(TreeNode *root, long int leftPrime, long long int n, long long int m, long long int level, long long int *left_gap)
+{
+	long long int L_a = 0;
+	long long int L_b = 0;
+	// Search for prime numbers towards left
+	while (leftPrime >= n)
+	{
+		if (isPrime(leftPrime))
+		{
+
+			root = newNode(leftPrime, level);
+			// Since every node is creating two child tasks, we need to check if the number of threads is less than 2 * level.
+			if (2 * root->level > omp_get_max_threads())
+			// if (false)
+			{
+				*left_gap = max(insertPrimes(root->left, n, leftPrime - 1, level + 1),
+								insertPrimes(root->right, leftPrime + 1, m, level + 1));
+			}
+			else
+			{
+#pragma omp task
+				{
+					L_a = insertPrimes(root->left, n, leftPrime - 1, level + 1);
+				}
+#pragma omp task
+				{
+					L_b = insertPrimes(root->right, leftPrime + 1, m, level + 1);
+				}
+#pragma omp taskwait
+				*left_gap = max(L_a, L_b);
+			}
+
+			break;
+		}
+		leftPrime--;
+	}
+}
+
+// Function to search prime numbers towards right
+void searchRight(TreeNode *root, long int rightPrime, long long int n, long long int m, long long int level, long long int *right_gap)
+{
+	
+}
 
 // Function to insert primes in the binary tree
 // Function to insert primes in the binary tree
-void insertPrimes(TreeNode *&root, long long int n, long long int m, long long int level, long long int &largestGapInNode)
+
+/**
+ * I have added a level parameter to keep track of the level of the node in the tree.
+ */
+
+long long int insertPrimes(TreeNode *&root, long long int n, long long int m, long long int level, long long int &prev)
 {
 	if (n > m)
-		return;
+		return 0;
 
 	long long int mid = (n + m) / 2;
+	long long int left_gap = 0;
+	long long int right_gap = 0;
+
 	if (isPrime(mid))
 	{
 		root = newNode(mid, level);
-		insertPrimes(root->left, n, mid - 1, level + 1, largestGapInNode);
-		insertPrimes(root->right, mid + 1, m, level + 1, largestGapInNode);
-		cout << "Prime: " << mid << " Level: " << level << endl;
+		auto a = insertPrimes(root->left, n, mid - 1, level + 1,prev);
+		prev = root->data;
+		auto b = insertPrimes(root->right, mid + 1, m, level + 1,prev);
+		return max(max(mid - n, m - mid), max(a, b));
 	}
 	else
 	{
 		long long int leftPrime = mid - 1;
 		long long int rightPrime = mid + 1;
 
-		// Search for prime numbers towards left
-		while (leftPrime >= n)
-		{
-			if (isPrime(leftPrime))
-			{
+		/**
+		 * Here I tried to using two threads as master if the number of threads is greater than 8.
+		 * but then the speed up I was getting was in of the factor of 30 to 40 times.
+		 * Which didn't seem right. That's why I commented it out.
+		 *
+		 * Here are the times I got with 2 master threads
+		 * threads = [1, 2, 4, 8, 12]
+		 * times = [0.022040, 0.014552, 0.008940, 0.000268, 0.000375]
+		 */
 
-				root = newNode(leftPrime, level);
-				if (/*pow(2, root->level)*/ root->level > 8 /*omp_get_num_threads()*/)
-				{
-					insertPrimes(root->left, n, leftPrime - 1, level + 1, largestGapInNode);
-					insertPrimes(root->right, leftPrime + 1, m, level + 1, largestGapInNode);
-				}
-				else
-				{
-#pragma omp task
-					{
-						insertPrimes(root->left, n, leftPrime - 1, level + 1, largestGapInNode);
-					}
-#pragma omp task
-					{
-						insertPrimes(root->right, leftPrime + 1, m, level + 1, largestGapInNode);
-					}
-				}
-
-				break;
-			}
-			leftPrime--;
-		}
-
-		// Search for prime numbers towards right
-		while (rightPrime <= m)
-		{
-			if (isPrime(rightPrime))
-			{
-				root = newNode(rightPrime, level);
-				if (/*pow(2, root->level)*/ root->level > 8 /*omp_get_num_threads()*/)
-				{
-
-					insertPrimes(root->left, n, rightPrime - 1, level + 1, largestGapInNode);
-					insertPrimes(root->right, rightPrime + 1, m, level + 1, largestGapInNode);
-				}
-				else
-				{
-#pragma omp task
-					{
-						insertPrimes(root->left, n, rightPrime - 1, level + 1, largestGapInNode);
-					}
-#pragma omp task
-					{
-						insertPrimes(root->right, rightPrime + 1, m, level + 1, largestGapInNode);
-					}
-				}
-
-				break;
-			}
-			rightPrime++;
-		}
-		if (rightPrime - leftPrime > largestGapInNode)
-		{
-			largestGapInNode = rightPrime - leftPrime;
-		}
+		// If the number of threads is greater than or equal to 8, we can create two masters for the left and right subtrees.
+		// 		if (omp_get_max_threads() >= 8)
+		// 		{
+		// #pragma omp single nowait
+		// 			{
+		// 				searchLeft(root, leftPrime, n, m, level, left_gap, L_a, L_b);
+		// 			}
+		// #pragma omp single nowait
+		// 			{
+		// 				searchRight(root, rightPrime, n, m, level, right_gap, R_a, R_b);
+		// 			}
+		// 		}
+		// else
+		// {
+		searchLeft(root, leftPrime, n, m, level, &left_gap);
+		searchRight(root, rightPrime, n, m, level, &right_gap);
+// }
+#pragma omp taskwait
+		// printf("Left gap: %lld, Right gap: %lld\n", left_gap, right_gap);
+		auto gap = max(left_gap, right_gap);
+		return gap;
 	}
 }
-
-void printBT(const std::string &prefix, const TreeNode *node, bool isLeft)
-{
-	if (node != nullptr)
-	{
-		std::cout << prefix;
-
-		std::cout << (isLeft ? "├──" : "└──");
-
-		// print the value of the node
-		std::cout << node->data << std::endl;
-
-		// enter the next tree level - left and right branch
-		printBT(prefix + (isLeft ? "│   " : "    "), node->left, true);
-		printBT(prefix + (isLeft ? "│   " : "    "), node->right, false);
-	}
-}
-
-void printBT(const TreeNode *node)
-{
-	std::cout << "Binary Tree: " << std::endl;
-	printBT("", node, false);
-}
-
 // pass the root node of your binary tree
 
 // Function to prlong long int inorder traversal of the tree
@@ -173,12 +176,12 @@ int main()
 	// cout << "Enter the range [n, m]: ";
 	// cin >> n >> m;
 
-	n = 11;
-	m = 50;
+	n = 1;
+	m = 100;
 
 	TreeNode *root = nullptr;
 
-	int threads[] = {1, 2, 4, 8, 12, 16, 28, 32, 64};
+	int threads[] = {1, 2, 3, 4, 5, 6};
 	// int threads[] = {12};
 	int max_threads = omp_get_max_threads();
 	cout << "Number of threads available: " << max_threads << endl;
@@ -190,25 +193,25 @@ int main()
 		omp_set_num_threads(NUM_THREADS);
 
 		double start = omp_get_wtime();
-
-		long long int largestGapInNode = 0;
-
+		long long int gap = 0;
+		long long int firstPrime = 2;
 #pragma omp parallel
 		{
+
+// Letting one thread act as the master thread to create the tasks.
 #pragma omp single nowait
 			{
-				insertPrimes(root, n, m, 0, largestGapInNode);
+				gap = insertPrimes(root, n, m, 0, firstPrime);
 			}
 		}
 
 		// inorderTraversal(root);
-		// printBT(root);
 
 		double end = omp_get_wtime();
-		cout << "Largest prime gap: " << largestGapInNode << endl;
-		cout << "Time taken by " << NUM_THREADS << " threads : " << end - start << " seconds" << endl;
+		cout << "Gap: " << gap << endl;
+		printf("Time for %2d threads : ", NUM_THREADS);
+		cout << end - start << endl;
 	}
-	printBT(root);
 	cout << "Prime numbers between " << n << " and " << m << endl;
 
 	return 0;
