@@ -21,19 +21,16 @@ int main(int argc, char *argv[])
 
 	if (id == MASTER)
 	{
-		dataBuf = JpegFile::JpegFileToRGB("test-huge.jpg", &width, &height);
-		printf("id: %d, width: %d, height: %d\n", id, width, height);
+		dataBuf = JpegFile::JpegFileToRGB("testcolor.jpg", &width, &height);
 	}
+
+	wtime = MPI_Wtime();
 
 	MPI_Bcast(&height, 1, MPI_UINT16_T, MASTER, MPI_COMM_WORLD);
 	MPI_Bcast(&width, 1, MPI_UINT16_T, MASTER, MPI_COMM_WORLD);
 
-	printf("id: %d, width: %d, height: %d\n", id, width, height);
-
 	int rowsPerProcess = height / p;
 	int remainingRows = height % p;
-
-	printf("id: %d, rowsPerProcess: %d\n", id, rowsPerProcess);
 
 	auto workerRows = height / p;
 	// printf("id: %d, rowsPerProcess: %d, remainingRows: %d\n", id, rowsPerProcess, remainingRows);
@@ -54,7 +51,6 @@ int main(int argc, char *argv[])
 
 	// the following code convert RGB to gray luminance.
 	UINT row, col;
-	printf("id: %d, starting to process.\n", id);
 	for (row = 0; row < rowsToProcess; row++)
 	{
 		for (col = 0; col < width; col++)
@@ -72,13 +68,18 @@ int main(int argc, char *argv[])
 			*pBlu = (BYTE)lum;
 		}
 	}
-	printf("id: %d, done with process.\n", id);
 
 	// if (id == MASTER)
 	// {
 
 	MPI_Gather(workerData, scatterCount, MPI_BYTE, dataBuf, scatterCount, MPI_BYTE, MASTER, MPI_COMM_WORLD);
 	// }
+
+	wtime = MPI_Wtime() - wtime;
+	if (id == MASTER)
+	{
+		printf("Time taken: %3.6f\n", wtime);
+	}
 
 	if (id == MASTER)
 	{
