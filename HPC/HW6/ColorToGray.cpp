@@ -25,31 +25,37 @@ int main(int argc, char *argv[])
 		printf("id: %d, width: %d, height: %d\n", id, width, height);
 	}
 
-	MPI_Bcast(&height, 1, MPI_UINT8_T, MASTER, MPI_COMM_WORLD);
-	MPI_Bcast(&width, 1, MPI_UINT8_T, MASTER, MPI_COMM_WORLD);
+	MPI_Bcast(&height, 1, MPI_UINT16_T, MASTER, MPI_COMM_WORLD);
+	MPI_Bcast(&width, 1, MPI_UINT16_T, MASTER, MPI_COMM_WORLD);
+
+	printf("id: %d, width: %d, height: %d\n", id, width, height);
 
 	int rowsPerProcess = height / p;
 	int remainingRows = height % p;
 
-	printf("id: %d, rowsPerProcess: %d", id, rowsPerProcess);
+	printf("id: %d, rowsPerProcess: %d\n", id, rowsPerProcess);
 
 	auto workerRows = height / p;
 	// printf("id: %d, rowsPerProcess: %d, remainingRows: %d\n", id, rowsPerProcess, remainingRows);
-	auto workerDataSize = workerRows * width * 3 * sizeof(BYTE);
-
-	if (id == p - 1)
+	auto rowsToProcess = workerRows;
+	if (id == MASTER)
 	{
-		workerRows += remainingRows;
+		rowsToProcess += remainingRows;
 	}
 
-	auto workerData = (BYTE *)calloc(workerRows * width * 3, sizeof(BYTE));
+	auto workerDataSize = (int)(rowsToProcess * width * 3 * sizeof(BYTE));
+	auto workerData = (BYTE *)malloc(workerDataSize);
 	auto scatterCount = workerRows * width * 3;
 	// printf("id: %d, rows: %d, scatterCount: %d\n", id, workerRows, scatterCount);
+	// if (id == MASTER)
+	// {
 	MPI_Scatter(dataBuf, scatterCount, MPI_BYTE, workerData, scatterCount, MPI_BYTE, MASTER, MPI_COMM_WORLD);
+	// }
 
 	// the following code convert RGB to gray luminance.
 	UINT row, col;
-	for (row = 0; row < rowsPerProcess; row++)
+	printf("id: %d, starting to process.\n", id);
+	for (row = 0; row < rowsToProcess; row++)
 	{
 		for (col = 0; col < width; col++)
 		{
@@ -66,8 +72,13 @@ int main(int argc, char *argv[])
 			*pBlu = (BYTE)lum;
 		}
 	}
+	printf("id: %d, done with process.\n", id);
+
+	// if (id == MASTER)
+	// {
 
 	MPI_Gather(workerData, scatterCount, MPI_BYTE, dataBuf, scatterCount, MPI_BYTE, MASTER, MPI_COMM_WORLD);
+	// }
 
 	if (id == MASTER)
 	{
