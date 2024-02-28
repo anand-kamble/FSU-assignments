@@ -10,7 +10,7 @@ OUTPUT_FILE="benchmark_results.txt"
 REPETITIONS=1
 
 # List of number of processes to benchmark
-NUM_PROCS_LIST=(2 4 8 16 32)
+NUM_PROCS_LIST=(1 2 3 4 5 6 7 8 9 10 11 12 13 14)
 
 # Function to run the MPI program with given number of processes
 run_mpi_program() {
@@ -21,19 +21,20 @@ run_mpi_program() {
 
     # Run the program for specified repetitions and record execution time
     for ((i=1; i<=$repetitions; i++)); do
-        echo "Running with $num_procs processes, repetition $i..."
-        echo "-------------------" >> $output_file
-        echo "Time for $num_procs : " >> $output_file
-        { $command; } 2>&1  | grep "Time"| awk '{print $3}'s >> $output_file
+        echo "-------------------" 
+        echo "Time for $num_procs : "
+        $command
     done
 }
 
 # Clear output file
 echo -n > $OUTPUT_FILE
 
+# load the mpi module
+module load mpi/openmpi-x86_64
+
 # Run the MPI program for each number of processes in the list
 for num_procs in "${NUM_PROCS_LIST[@]}"; do
-    echo "Benchmarking with $num_procs processes..."
     run_mpi_program $num_procs $OUTPUT_FILE $REPETITIONS
 done
 
