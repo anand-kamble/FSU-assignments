@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 	}
 
 	// Write the processed data to a new file by the master process
-	if (id == MASTER)
+	if (id == MASTER) // Only the master rank writes the image file.
 	{
 		JpegFile::RGBToJpegFile("testmono.jpg", dataBuf, width, height, true, 75);
 	}
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 	// Free the memory allocated for the worker data
 	delete dataBuf;
 	delete workerData;
-	
+
 	// Finalize the MPI environment
 	MPI_Finalize();
 
