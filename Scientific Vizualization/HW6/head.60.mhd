@@ -1,0 +1,15 @@
+NDims = 3
+BinaryData = True
+DimSize = 120 120 130
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = -1 0 0 0 1 0 0 0 -1
+Offset = 0 0 0
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = LAS
+ElementSpacing = 0.9375 0.9375 1.5
+ITK_InputFilterName = MetaImageIO
+ObjectType = Image
+ElementType = MET_SHORT
+ElementDataFile = head.60.raw
