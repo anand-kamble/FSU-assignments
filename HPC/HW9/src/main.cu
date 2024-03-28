@@ -59,7 +59,7 @@ int main()
     cudaMemcpy(deviceInputData, hostDataBuf, dataSize, cudaMemcpyHostToDevice);
 
     // Define block and grid dimensions
-    dim3 blockDim(16, 16);
+    dim3 blockDim(1024, 1024);
     dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
 
     // Record the start time for benchmarking
