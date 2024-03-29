@@ -59,6 +59,7 @@ int main()
     cudaEventCreate(&stop);
     cudaEventRecord(start);
 
+    // Allocate device memory
     cudaMalloc(&deviceInputData, dataSize);
     cudaMalloc(&deviceOutputData, dataSize);
 
@@ -66,21 +67,21 @@ int main()
     cudaMemcpy(deviceInputData, hostDataBuf, dataSize, cudaMemcpyHostToDevice);
 
     // Define block and grid dimensions
-    dim3 blockDim(1024, 1024);
+    dim3 blockDim(1024, 1024); // Got these values for A5000 GPU
     dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
 
     // Launch the CUDA kernel
     convertToGrayKernel<<<gridDim, blockDim>>>(deviceInputData, deviceOutputData, width, height);
+
+
+    // Copy output data from device to host
+    cudaMemcpy(hostDataBuf, deviceOutputData, dataSize, cudaMemcpyDeviceToHost);
 
     // Record the end time for benchmarking
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
     float elapsedTime;
     cudaEventElapsedTime(&elapsedTime, start, stop);
-
-    // Copy output data from device to host
-    cudaMemcpy(hostDataBuf, deviceOutputData, dataSize, cudaMemcpyDeviceToHost);
-
     // Print the execution time
     printf("Time for CUDA execution: %f ms\n", elapsedTime);
 
