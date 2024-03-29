@@ -52,6 +52,13 @@ int main()
     // Allocate device memory for input and output data
     uint8_t *deviceInputData, *deviceOutputData;
     size_t dataSize = width * height * 3 * sizeof(uint8_t);
+
+    // Record the start time for benchmarking
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    cudaEventRecord(start);
+
     cudaMalloc(&deviceInputData, dataSize);
     cudaMalloc(&deviceOutputData, dataSize);
 
@@ -62,23 +69,17 @@ int main()
     dim3 blockDim(32, 32, 1);
     dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y, 1);
 
-    // Record the start time for benchmarking
-    cudaEvent_t start, stop;
-    cudaEventCreate(&start);
-    cudaEventCreate(&stop);
-    cudaEventRecord(start);
-
     // Launch the CUDA kernel
     convertToGrayKernel<<<gridDim, blockDim>>>(deviceInputData, deviceOutputData, width, height);
+
+    // Copy output data from device to host
+    cudaMemcpy(hostDataBuf, deviceOutputData, dataSize, cudaMemcpyDeviceToHost);
 
     // Record the end time for benchmarking
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
     float elapsedTime;
     cudaEventElapsedTime(&elapsedTime, start, stop);
-
-    // Copy output data from device to host
-    cudaMemcpy(hostDataBuf, deviceOutputData, dataSize, cudaMemcpyDeviceToHost);
 
     // Print the execution time
     printf("Time for CUDA execution: %f ms\n", elapsedTime);
