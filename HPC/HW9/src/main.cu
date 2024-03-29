@@ -52,6 +52,13 @@ int main()
     // Allocate device memory for input and output data
     uint8_t *deviceInputData, *deviceOutputData;
     size_t dataSize = width * height * 3 * sizeof(uint8_t);
+
+    // Record the start time for benchmarking
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    cudaEventRecord(start);
+
     cudaMalloc(&deviceInputData, dataSize);
     cudaMalloc(&deviceOutputData, dataSize);
 
@@ -61,12 +68,6 @@ int main()
     // Define block and grid dimensions
     dim3 blockDim(1024, 1024);
     dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
-
-    // Record the start time for benchmarking
-    cudaEvent_t start, stop;
-    cudaEventCreate(&start);
-    cudaEventCreate(&stop);
-    cudaEventRecord(start);
 
     // Launch the CUDA kernel
     convertToGrayKernel<<<gridDim, blockDim>>>(deviceInputData, deviceOutputData, width, height);
