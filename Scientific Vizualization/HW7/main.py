@@ -1,3 +1,9 @@
+"""
+@file: main.py
+@author: Anand Kamble
+@date: March 30, 2024
+"""
+
 import numpy as np
 from vtk import (
     vtkFixedPointVolumeRayCastMapper,
@@ -13,7 +19,8 @@ from vtk import (
     vtkCommand,
 )
 
-
+# Choose colors from Viridis color map
+# Found on: https://www.kennethmoreland.com/color-advice/
 Colors = {"SKIN": np.array([74, 194, 109]), "SKULL": np.array([159, 218, 58])}
 
 # Load the mummy dataset
