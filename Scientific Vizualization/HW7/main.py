@@ -27,15 +27,13 @@ Colors = {"SKIN": np.array([74, 194, 109]), "SKULL": np.array([159, 218, 58])}
 reader = vtkStructuredPointsReader()
 reader.SetFileName("mummy.128.vtk")
 
-print()
-
 # Create the transfer mapping scalar value to opacity
 opacityTransferFunction = vtkPiecewiseFunction()
 opacityTransferFunction.AddPoint(0, 0.0)
-opacityTransferFunction.AddPoint(70, 0.25)  # Skin
-opacityTransferFunction.AddPoint(90, 0.05)
-opacityTransferFunction.AddPoint(100, 0.75)  # Skull
-opacityTransferFunction.AddPoint(200, 0.3)
+opacityTransferFunction.AddPoint(70, 0.2) # Skin
+opacityTransferFunction.AddPoint(90, 0.5)
+opacityTransferFunction.AddPoint(100, 0.7) # Skull
+opacityTransferFunction.AddPoint(120, 0.9)
 opacityTransferFunction.AddPoint(255, 1.0)
 
 # Create the transfer mapping scalar value to color
@@ -43,7 +41,7 @@ colorTransferFunction = vtkColorTransferFunction()
 colorTransferFunction.AddRGBPoint(0, 0.0, 0.0, 0.0)
 colorTransferFunction.AddRGBPoint(70, *(Colors["SKIN"] / 255))  # Skin
 colorTransferFunction.AddRGBPoint(100, *(Colors["SKULL"] / 255))  # Skull
-
+colorTransferFunction.AddRGBPoint(255, 1.0, 1.0, 1.0)
 
 # Create the volume property
 volumeProperty = vtkVolumeProperty()
