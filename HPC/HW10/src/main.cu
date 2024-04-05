@@ -1,9 +1,10 @@
-#include <cuda_runtime.h>
+#include <cuda_runtime.h> // I am not sure if this is needed when using nvcc, but vscode was complaining about not being able to find cuda_runtime.h
 #include <cmath>
 #include <stdint.h>
 #include <iostream>
 #include "../includes/Jpegfile.h"
 
+// Defining a struct to represent a pixel
 struct Pixel
 {
     uint8_t r;
@@ -11,12 +12,33 @@ struct Pixel
     uint8_t b;
 };
 
+
+/**
+ * @brief Function to calculate the euclidean distance between two pixels
+ * 
+ * @param p1 
+ * @param p2 
+ * @return double 
+ */
 double euclideanDistance(const Pixel *p1, const Pixel *p2)
 {
     double sum = 0.0;
     return sqrt(pow(p1->r - p2->r, 2) + pow(p1->g - p2->g, 2) + pow(p1->b - p2->b, 2));
 };
 
+
+/**
+ * @brief Function to calculate the sum of all pixels in a group
+ * 
+ * @param width 
+ * @param height 
+ * @param k 
+ * @param colors 
+ * @param generators 
+ * @param groupColorSum 
+ * @param groupCount 
+ * @return __global__ 
+ */
 __global__ void groupingKernel(UINT width, UINT height, int k, Pixel *colors, Pixel *generators, int *groupColorSum, int *groupCount)
 {
     int x = threadIdx.x + blockIdx.x * blockDim.x;
@@ -48,6 +70,16 @@ __global__ void groupingKernel(UINT width, UINT height, int k, Pixel *colors, Pi
     }
 }
 
+
+/**
+ * @brief Function to update the generators
+ * 
+ * @param k 
+ * @param generators 
+ * @param groupColorSum 
+ * @param groupCount 
+ * @return __global__ 
+ */
 __global__ void updateGeneratorsKernel(int k, Pixel *generators, int *groupColorSum, int *groupCount)
 {
     int i = threadIdx.x;
@@ -95,6 +127,12 @@ int main()
     const int N = height * width; // Total number of pixels
 
     Pixel *device_colors;
+
+    // Record the start time for benchmarking
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    cudaEventRecord(start);
 
     cudaMalloc(&device_colors, width * height * sizeof(Pixel));
     cudaMemcpy(device_colors, hostDataBuf, width * height * sizeof(Pixel), cudaMemcpyHostToDevice);
@@ -146,6 +184,14 @@ int main()
     cudaDeviceSynchronize();
 
     cudaMemcpy(hostDataBuf, device_colors, N * sizeof(Pixel), cudaMemcpyDeviceToHost);
+
+    // Record the end time for benchmarking
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    float elapsedTime;
+    cudaEventElapsedTime(&elapsedTime, start, stop);
+
+    printf("Time for CUDA execution: %f ms\n", elapsedTime);
 
     JpegFile::RGBToJpegFile("output.jpg", hostDataBuf, width, height, 100, false);
 
