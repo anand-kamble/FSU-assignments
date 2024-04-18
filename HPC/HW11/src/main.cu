@@ -23,7 +23,7 @@ __device__ double euclideanDistance(const Pixel *p1, const Pixel *p2)
 __global__ void groupingKernel(UINT width, UINT height, int k, Pixel *colors, Pixel *generators, int *groupColorSum, int *groupCount)
 {
     extern __shared__ Pixel s_generators[];
-    extern __shared__ int s_groupColorSum[];
+    extern __shared__ float s_groupColorSum[];
     extern __shared__ int s_groupCount[];
 
     int x = threadIdx.x + blockIdx.x * blockDim.x;

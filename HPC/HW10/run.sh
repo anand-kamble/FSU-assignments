@@ -9,6 +9,6 @@ make
 echo "Running the K-Means CUDA program..."
 
 # Run the program with k = 7
-echo "7" | ./bin/test.x
+echo "3" | ./bin/test.x
 #     ^
 #     | Change this value to change the number of clusters
