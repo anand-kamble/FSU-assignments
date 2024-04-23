@@ -11,7 +11,8 @@ class Dataset:
         self.directory = directory
         self.files = None
     
-    def LoadFiles(self) -> bool:
+    
+    def searchFiles(self) -> bool:
         if self.directory is None:
             print("No directory specified, cannot load files.")
             exit(1)
@@ -19,6 +20,9 @@ class Dataset:
             self.files = glob.glob(self.directory + "/" + self.filename)
             self.files.sort(key=self.__sortFiles)
             return True
+    
+    def loadDataset(self):
+        
     
     def __sortFiles(self, file:str):
         regex_filter = re.compile(self.filename)
