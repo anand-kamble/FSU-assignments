@@ -6,10 +6,11 @@ import re
 
     
 class Dataset:
-    def __init__(self,filename, directory = None) -> None:
+    def __init__(self,filename:str, directory = None) -> None:
         self.filename:str = filename
-        self.directory = directory
-        self.files = None
+        self.directory:str = directory
+        self.files:List[str] = None
+        self.data:List[any] = list()
     
     
     def searchFiles(self) -> bool:
@@ -21,8 +22,16 @@ class Dataset:
             self.files.sort(key=self.__sortFiles)
             return True
     
-    def loadDataset(self):
-        
+    def loadDataset(self) -> None:
+        if self.files is None:
+            print("No files to load, cannot load dataset.")
+            exit(1)
+        else:
+            for file in self.files:
+                with h5py.File(file, 'r') as f:
+                    data_dict = dict()
+                    dict.update(data_dict, {k : f[k][:] for k in f.keys()})
+                    self.data.append(data_dict)
     
     def __sortFiles(self, file:str):
         regex_filter = re.compile(self.filename)
