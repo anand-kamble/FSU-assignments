@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[a4paper, portrait, margin=1in, top=1in]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage[sorting=none]{biblatex}
+\usepackage{minted}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{listings}
+\usepackage{movie15}
+
+\lstset{
+    language=C++,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!70!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{gray!5},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % Remove header rule
+\renewcommand{\footrulewidth}{1pt} % Add footer rule
+\fancyfoot[C]{\thepage} % Centered page number at the bottom
+
+\addbibresource{ref.bib}
+
+\begin{document}
+\begin{center}
+
+{\textcolor{RedOrange}{High-Performance Computing}} \\
+\vspace{0.5em}
+\text{\LARGE OpenACC - Convert color image to gray image} \\
+\vspace{1em}
+\href{mailto:amk23j@fsu.edu}{Anand Kamble}\\
+\text{Department of Scientific Computing} \\
+\text{Florida State University}
+\end{center}
+
+\noindent
+\hrulefill
+
+\section{Introduction}
+In this assignment, we are using OpenACC for parallelization. We are using the \texttt{pgc++} compiler for compiling this project.
+
+\section{Implementation}
+\subsection{Copying Data from host to device}
+The \texttt{\#pragma acc data} directive specifies that the \texttt{dataBuf} array should be copied to the device before the parallel region, and copied back to the host after the parallel region. Here we are also specifying that we want to copy the whole array by adding \texttt{[0:width*height*3]} in the directive.
+
+\begin{lstlisting}[language=C++,caption={Grouping Kernel with Shared Memory}, label={lst:1},firstnumber=25]
+#pragma acc data copy(dataBuf[0:width*height*3])
+{
+...
+}
+\end{lstlisting}
+
+\subsection{Parallelizing the loops}
+The \texttt{\#pragma acc parallel loop collapse(2)} directive tells the compiler to parallelize the nested loops across the available device cores.
+
+\begin{lstlisting}[language=C++,caption={Grouping Kernel with Shared Memory}, label={lst:1},firstnumber=25]
+#pragma acc parallel loop collapse(2)
+{
+    for(...){
+        for(...){
+            ...
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Timing}
+In this code, we are using \texttt{std::chrono} library to measure the time taken by the RGB to grayscale conversion function.
+
+\begin{lstlisting}[language=C++,caption={Grouping Kernel with Shared Memory}, label={lst:1},firstnumber=25]
+auto start = std::chrono::high_resolution_clock::now();
+// RGB to grayscale conversion
+auto stop = std::chrono::high_resolution_clock::now();
+auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+printf("Time taken by function: %d ms\n", duration.count() / 1000);
+\end{lstlisting}
+
+\section{Results}
+
+We can see very good increase in the performance of the program compared to the CPU with minimal effort. Although, CUDA is faster in this case, the time required to program the CUDA is much higher than OpenACC.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\linewidth]{download (4).png}
+    % \caption{}
+    % \label{fig:your_label}
+\end{figure}
+
+\noindent
+I also did profile the program using nsys, and here are the results. We can see that most of the time spent is for \texttt{cuMemAllocHost\_v2}.
+
+\begin{lstlisting}[basicstyle=\tiny]
+ ** OS Runtime Summary (osrt_sum):
+
+Time (%)  Total Time (ns)  Num Calls   Avg (ns)    Med (ns)   Min (ns)   Max (ns)   StdDev (ns)           Name         
+--------  ---------------  ---------  -----------  ---------  --------  ----------  -----------  ----------------------
+ 53.9       48,175,787         11  4,379,617.0  913,093.0     1,065  19,626,624  6,817,824.5  poll                  
+ 40.4       36,158,173        474     76,283.1    6,121.0       242   9,646,217    620,925.7  ioctl                 
+  1.6        1,393,615         33     42,230.8    2,936.0     1,044   1,194,560    207,244.2  fopen                 
+  1.2        1,069,237         27     39,601.4      860.0       557   1,034,533    198,845.0  fclose                
+  0.9          841,527         27     31,167.7    4,519.0     3,442     483,519     91,591.5  mmap64                
+  0.7          599,349          9     66,594.3   20,154.0     8,556     241,538     82,071.0  sem_timedwait         
+  0.6          536,913          5    107,382.6   73,275.0    49,702     189,197     65,204.6  pthread_create        
+  0.2          191,612          1    191,612.0  191,612.0   191,612     191,612          0.0  pthread_cond_wait     
+  0.2          167,568         45      3,723.7    2,891.0     1,533      15,015      2,372.1  open64                
+  0.1           80,990         15      5,399.3    2,268.0       962      28,954      7,193.2  mmap                  
+  0.0           32,507         49        663.4       36.0        29      30,655      4,373.8  fgets                 
+  0.0           29,230          8      3,653.8    3,317.0       661       6,380      1,948.8  open                  
+  0.0           20,372          4      5,093.0    4,982.5       551       9,856      4,049.1  fread                 
+  0.0           17,903         59        303.4      274.0        93         878        156.7  fcntl                 
+  0.0           14,950         11      1,359.1    1,464.0       421       2,216        596.3  write                 
+  0.0           14,735          6      2,455.8    2,294.0     1,203       4,264      1,181.6  munmap                
+  0.0           11,774          2      5,887.0    5,887.0     4,860       6,914      1,452.4  socket                
+  0.0           10,918         15        727.9      525.0       189       1,902        579.9  read                  
+  0.0            9,423          3      3,141.0    3,806.0     1,100       4,517      1,803.0  pipe2                 
+  0.0            9,024          1      9,024.0    9,024.0     9,024       9,024          0.0  fflush                
+  0.0            7,415          4      1,853.8    1,537.5       126       4,214      1,804.5  fwrite                
+  0.0            7,316          1      7,316.0    7,316.0     7,316       7,316          0.0  connect               
+  0.0            3,622          3      1,207.3      303.0       273       3,046      1,592.4  pthread_cond_broadcast
+  0.0            1,421          7        203.0      199.0       130         247         37.9  dup                   
+  0.0              972          1        972.0      972.0       972         972          0.0  bind                  
+  0.0              635          1        635.0      635.0       635         635          0.0  listen                
+
+Processing [report1.sqlite] with [/opt/nvidia/nsight-systems/2023.4.4/host-linux-x64/reports/cuda_api_sum.py]... 
+
+** CUDA API Summary (cuda_api_sum):
+
+Time (%)  Total Time (ns)  Num Calls  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)          Name        
+--------  ---------------  ---------  ---------  ---------  --------  --------  -----------  --------------------
+ 69.1          518,745          1  518,745.0  518,745.0   518,745   518,745          0.0  cuMemAllocHost_v2   
+ 11.8           88,330          2   44,165.0   44,165.0     6,231    82,099     53,646.8  cuMemAlloc_v2       
+  6.9           51,872          1   51,872.0   51,872.0    51,872    51,872          0.0  cuModuleLoadDataEx  
+  4.6           34,538          1   34,538.0   34,538.0    34,538    34,538          0.0  cuMemcpyDtoHAsync_v2
+  3.3           25,086          1   25,086.0   25,086.0    25,086    25,086          0.0  cuMemcpyHtoDAsync_v2
+  2.6           19,269          1   19,269.0   19,269.0    19,269    19,269          0.0  cuLaunchKernel      
+  1.6           12,058          3    4,019.3    3,158.0       512     8,388      4,008.0  cuStreamSynchronize 
+  0.2            1,333          3      444.3      303.0       132       898        402.1  cuCtxSetCurrent     
+
+
+\end{lstlisting}
+
+\printbibliography[title={References}]
+\end{document}
