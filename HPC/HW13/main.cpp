@@ -21,7 +21,7 @@ double euclideanDistance(const Pixel *p1, const Pixel *p2)
 int main()
 {
     UINT width, height;
-    uint8_t *hostDataBuf = JpegFile::JpegFileToRGB("test-huge.jpg", &width, &height);
+    uint8_t *hostDataBuf = JpegFile::JpegFileToRGB("test-large.jpg", &width, &height);
 
     const int N = height * width;
 
