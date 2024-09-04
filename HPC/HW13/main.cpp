@@ -42,10 +42,10 @@ int main()
 
     auto start = std::chrono::high_resolution_clock::now();
 
-// #pragma acc enter data create(generators[0 : k])
 #pragma acc data copyin(hostDataBuf[0 : N * 3], generators[0 : k])
     {
-#pragma acc parallel loop gang vector
+        // I havn't parallelized this loop since it only runs for one time
+        // and the number of iterations is very small
         for (int i = 0; i < k; i++)
         {
             generators[i].r = hostDataBuf[(N * 3 / k) * i];
@@ -55,14 +55,15 @@ int main()
 
         int *groupColorSum; // = new int[k * 3];
         int *groupCount;    // = new int[k];
-#pragma acc enter data create(groupColorSum[0 : k * 3], groupCount[0 : k])
-#pragma acc data create(colors[0 : N], generators[0 : k], groupColorSum[0 : k * 3], groupCount[0 : k])
+
+#pragma acc enter data create(groupColorSum[0 : k * 3], groupCount[0 : k])                             // Move in to the device
+#pragma acc data create(colors[0 : N], generators[0 : k], groupColorSum[0 : k * 3], groupCount[0 : k]) // Allocate memory on the device
         {
             for (int iter = 0; iter < 10; iter++)
             {
 
                 // #pragma acc kernels
-#pragma acc parallel loop gang vector reduction(+ : groupColorSum[ : k * 3]) reduction(+ : groupCount[ : k]) present(colors, generators, groupColorSum, groupCount)
+#pragma acc parallel loop gang vector reduction(+ : groupColorSum[ : k * 3]) reduction(+ : groupCount[ : k]) present(colors, generators, groupColorSum, groupCount) // Loop to assign each pixel to a cluster
                 for (int i = 0; i < N; i++)
                 {
                     double minDist = INFINITY;
@@ -84,7 +85,7 @@ int main()
                     groupCount[minIndex]++;
                 }
 
-#pragma acc parallel loop gang vector present(generators, groupColorSum, groupCount)
+#pragma acc parallel loop gang vector present(generators, groupColorSum, groupCount) // Loop to calculate the new generators
                 for (int i = 0; i < k; i++)
                 {
                     generators[i].r = groupColorSum[i * 3] / groupCount[i];
@@ -93,15 +94,15 @@ int main()
                 }
 
 #pragma acc parallel loop gang vector
-                for (int i = 0; i < k * 3; i++)
+                for (int i = 0; i < k * 3; i++) // Reset the groupColorSum
                     groupColorSum[i] = 0;
 #pragma acc parallel loop gang
-                for (int i = 0; i < k; i++)
+                for (int i = 0; i < k; i++) // Reset the groupCount
                     groupCount[i] = 0;
             }
 
-#pragma acc parallel loop gang vector present(colors, generators)
-            for (int i = 0; i < N; i++)
+#pragma acc parallel loop gang vector present(colors, generators) 
+            for (int i = 0; i < N; i++) // Assign each pixel to a cluster
             {
                 double minDist = INFINITY;
                 int minIndex = 0;
@@ -120,10 +121,10 @@ int main()
             }
         }
 
-#pragma acc data copyout(colors[0 : N])
+#pragma acc data copyout(colors[0 : N]) // Copy the data back to the host
         {
-#pragma acc parallel loop present(colors, hostDataBuf) gang vector
-            for (int i = 0; i < N; i++)
+#pragma acc parallel loop present(colors, hostDataBuf) gang vector 
+            for (int i = 0; i < N; i++) // loop to update the hostDataBuf with the new colors
             {
                 hostDataBuf[i * 3] = colors[i].r;
                 hostDataBuf[i * 3 + 1] = colors[i].g;
@@ -132,10 +133,8 @@ int main()
         }
 
         delete[] generators;
-// delete[] groupColorSum;
-// delete[] groupCount;
-#pragma acc exit data delete (groupColorSum[0 : k * 3], groupCount[0 : k])
-#pragma acc data copyout(hostDataBuf[0 : N * 3])
+#pragma acc exit data delete (groupColorSum[0 : k * 3], groupCount[0 : k]) // Free the memory on the device
+#pragma acc data copyout(hostDataBuf[0 : N * 3]) // Copy the data back to the host
     }
 
     auto stop = std::chrono::high_resolution_clock::now();
