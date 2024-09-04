@@ -45,8 +45,8 @@ plt.ylabel('Misclassification Error')
 plt.title('Training and Test Misclassification Errors vs Tree Depth')
 plt.legend()
 plt.grid(True)
-plt.plot(train_error, label='Training Error', marker='o')
-plt.plot(test_error, label='Test Error', marker='o')
+plt.plot(range(1,13),train_error, label='Training Error', marker='o')
+plt.plot(range(1,13),test_error, label='Test Error', marker='o')
 plt.show()
 
 #%%
