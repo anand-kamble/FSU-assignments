@@ -1,3 +1,11 @@
+"""
+Author: Anand Kamble
+Course: Machine Learning (STA5635)
+Assignment: Homework 03
+Date: 19th Sep 2024
+email: amk23j@fsu.edu
+"""
+
 #%%
 import numpy as np
 import matplotlib.pyplot as plt
