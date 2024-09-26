@@ -138,7 +138,7 @@ results = pd.DataFrame({
 # Sort results by the number of features
 results = results.sort_values('num_features')
 
-
+print(results)
 # %%
 # Desired numbers of features
 desired_features = [10, 30, 100, 300, 500]
