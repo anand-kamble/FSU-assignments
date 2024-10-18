@@ -1,4 +1,47 @@
 #%%
+"""
+===================================================================
+Neural Network for Grayscale Image Reconstruction Using Pixel Values
+===================================================================
+Author  : Anand Kamble
+Date    : 17th October 2024
+Course  : Applied Machine Learning, Homework 7
+Institution: Florida State University, Department of Scientific Computing
+
+Description:
+------------
+This script trains a fully connected neural network to reconstruct a grayscale image ('horse033b.png') 
+based on its pixel coordinates and pixel intensity values. The task involves designing multiple 
+neural networks with varying depths and complexity, training them using stochastic gradient descent 
+(SGD), and visualizing the reconstruction performance across epochs.
+
+Key Features:
+-------------
+- Four models (Net_a to Net_d) with different architectures ranging from 1 to 4 hidden layers.
+- Input features include standardized (x, y) pixel coordinates.
+- The output is the pixel intensity value, centered to have zero mean.
+- Training performed using Mean Squared Error (MSE) loss with SGD optimizer.
+- Learning rate scheduler reduces the learning rate every 100 epochs for smooth convergence.
+- Reconstructed image visualized after training using the trained model's predictions.
+
+Dependencies:
+-------------
+- Python 3.11
+- PyTorch
+- NumPy
+- Matplotlib
+- tqdm (for progress bars)
+
+Ensure the image 'horse033b.png' is located in the same directory as this script before running it.
+
+Usage:
+------
+Run this script in an environment with the necessary dependencies installed. The training process will
+execute for 300 epochs, and both the loss function plot and the reconstructed image will be displayed 
+at the end of the training.
+
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
