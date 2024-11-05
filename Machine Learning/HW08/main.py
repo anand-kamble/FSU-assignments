@@ -1,25 +1,30 @@
 #%%
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import adjusted_rand_score
 from sklearn.metrics.cluster import contingency_matrix
 from scipy.optimize import linear_sum_assignment
-#%%
+
+# Create 'plots' directory if it doesn't exist
+if not os.path.exists('plots'):
+    os.makedirs('plots')
+
 # Parameters
 sigma = 3
 a_values = [0, 1, 2, 3, 4]
 num_runs = 10
 num_samples = 500
-#%%
+
 # Lists to store results
 a_all = []
 kmeans_accuracies_all = []
 em_accuracies_all = []
 kmeans_ari_all = []
 em_ari_all = []
-#%%
+
 for a in a_values:
     # Generate X_Q: 500 observations from N(0, sigma^2 * I)
     X_Q = np.random.normal(loc=0, scale=sigma, size=(num_samples, 2))
@@ -78,22 +83,24 @@ for a in a_values:
         if a == 0 and run == 0:
             y_kmeans_plot = y_kmeans.copy()
             y_em_plot = y_em.copy()
-#%%
+
 # Plot clustering results for a=0
 plt.figure(figsize=(8, 6))
 plt.scatter(X_plot[:, 0], X_plot[:, 1], c=y_kmeans_plot, cmap='viridis', s=10)
 plt.title('K-Means Clustering Result for a=0')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
-plt.show()
-#%%
+plt.savefig('plots/kmeans_clustering_a0.png')
+plt.close()
+
 plt.figure(figsize=(8, 6))
 plt.scatter(X_plot[:, 0], X_plot[:, 1], c=y_em_plot, cmap='viridis', s=10)
 plt.title('EM Clustering Result for a=0')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
-plt.show()
-#%%
+plt.savefig('plots/em_clustering_a0.png')
+plt.close()
+
 # Plot Accuracy vs. 'a' for all runs
 plt.figure(figsize=(8, 6))
 plt.scatter(a_all, kmeans_accuracies_all, color='red', label='K-Means')
@@ -102,8 +109,9 @@ plt.title('Accuracy vs. a')
 plt.xlabel('a')
 plt.ylabel('Accuracy')
 plt.legend()
-plt.show()
-#%%
+plt.savefig('plots/accuracy_vs_a.png')
+plt.close()
+
 # Plot Adjusted Rand Index vs. 'a' for all runs
 plt.figure(figsize=(8, 6))
 plt.scatter(a_all, kmeans_ari_all, color='red', label='K-Means')
@@ -112,17 +120,24 @@ plt.title('Adjusted Rand Index vs. a')
 plt.xlabel('a')
 plt.ylabel('Adjusted Rand Index')
 plt.legend()
-plt.show()
+plt.savefig('plots/ari_vs_a.png')
+plt.close()
 
-# %%
+
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import adjusted_rand_score
 from sklearn.metrics.cluster import contingency_matrix
 from scipy.optimize import linear_sum_assignment
-from numpy.linalg import inv, slogdet
+from numpy.linalg import inv
+
+# Create 'plots' directory if it doesn't exist
+if not os.path.exists('plots'):
+    os.makedirs('plots')
 
 # Parameters
 num_runs = 10
@@ -170,8 +185,8 @@ for run in range(num_runs):
     kmeans_iso = KMeans(n_clusters=2, n_init=10, random_state=run)
     y_kmeans_iso = kmeans_iso.fit_predict(X)
 
-    # K-Means with full covariance (using GaussianMixture with 'spherical' covariance)
-    kmeans_full = KMeans(n_clusters=2, n_init=10, random_state=run, algorithm='lloyd')
+    # K-Means with full covariance (simulated using GaussianMixture with 'spherical' covariance)
+    kmeans_full = GaussianMixture(n_components=2, covariance_type='spherical', random_state=run)
     y_kmeans_full = kmeans_full.fit_predict(X)
 
     # EM clustering
@@ -191,7 +206,7 @@ for run in range(num_runs):
     kmeans_iso_accuracies.append(acc_iso)
     kmeans_iso_ari.append(ari_iso)
 
-    # K-Means full
+    # K-Means full covariance (simulated)
     acc_full = compute_accuracy(y_true, y_kmeans_full)
     ari_full = adjusted_rand_score(y_true, y_kmeans_full)
     kmeans_full_accuracies.append(acc_full)
@@ -205,26 +220,32 @@ for run in range(num_runs):
 
     # Plot clustering results for the first four runs
     if run < 4:
+        # K-Means Isotropic
         plt.figure(figsize=(8, 6))
         plt.scatter(X[:, 0], X[:, 1], c=y_kmeans_iso, cmap='viridis', s=10)
         plt.title(f'Run {run+1}: K-Means (Isotropic)')
         plt.xlabel('Feature 1')
         plt.ylabel('Feature 2')
-        plt.show()
+        plt.savefig(f'plots/kmeans_iso_run{run+1}.png')
+        plt.close()
 
+        # K-Means Full Covariance (simulated)
         plt.figure(figsize=(8, 6))
         plt.scatter(X[:, 0], X[:, 1], c=y_kmeans_full, cmap='viridis', s=10)
         plt.title(f'Run {run+1}: K-Means (Full Covariance)')
         plt.xlabel('Feature 1')
         plt.ylabel('Feature 2')
-        plt.show()
+        plt.savefig(f'plots/kmeans_full_run{run+1}.png')
+        plt.close()
 
+        # EM Clustering
         plt.figure(figsize=(8, 6))
         plt.scatter(X[:, 0], X[:, 1], c=y_em, cmap='viridis', s=10)
         plt.title(f'Run {run+1}: EM Clustering')
         plt.xlabel('Feature 1')
         plt.ylabel('Feature 2')
-        plt.show()
+        plt.savefig(f'plots/em_clustering_run{run+1}.png')
+        plt.close()
 
 # Plot Accuracy vs. KL Divergence
 plt.figure(figsize=(8, 6))
@@ -235,7 +256,8 @@ plt.title('Accuracy vs. KL Divergence')
 plt.xlabel('KL Divergence D_KL(P || Q)')
 plt.ylabel('Accuracy')
 plt.legend()
-plt.show()
+plt.savefig('plots/accuracy_vs_kl.png')
+plt.close()
 
 # Plot Adjusted Rand Index vs. KL Divergence
 plt.figure(figsize=(8, 6))
@@ -246,7 +268,8 @@ plt.title('Adjusted Rand Index vs. KL Divergence')
 plt.xlabel('KL Divergence D_KL(P || Q)')
 plt.ylabel('Adjusted Rand Index')
 plt.legend()
-plt.show()
+plt.savefig('plots/ari_vs_kl.png')
+plt.close()
 
 # Create a table of results
 import pandas as pd
@@ -262,6 +285,8 @@ results_df = pd.DataFrame({
     'EM ARI': em_ari
 })
 
-print(results_df)
+# Save the results table to a CSV file
+results_df.to_csv('plots/clustering_results.csv', index=False)
 
-# %%
+# Optionally, print the DataFrame
+print(results_df)
