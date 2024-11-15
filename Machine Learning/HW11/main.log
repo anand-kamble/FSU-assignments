@@ -1,0 +1,1964 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2024.11.14)  14 NOV 2024 20:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.17> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+
+! LaTeX Error: File `minted.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
+\Gm@bindingoffset=\dimen112
+\Gm@wd@mp=\dimen113
+\Gm@odd@mp=\dimen114
+\Gm@even@mp=\dimen115
+\Gm@layoutwidth=\dimen116
+\Gm@layoutheight=\dimen117
+\Gm@layouthoffset=\dimen118
+\Gm@layoutvoffset=\dimen119
+\Gm@dimlist=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen122
+\Hy@linkcounter=\count102
+\Hy@pagecounter=\count103
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count104
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count105
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen123
+\Fld@menulength=\count106
+\Field@Width=\dimen124
+\Fld@charsize=\dimen125
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count107
+\c@Item=\count108
+\c@Hfootnote=\count109
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count110
+\c@bookmark@seq@number=\count111
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip47
+\f@nch@O@elh=\skip48
+\f@nch@O@erh=\skip49
+\f@nch@O@olh=\skip50
+\f@nch@O@orh=\skip51
+\f@nch@O@elf=\skip52
+\f@nch@O@erf=\skip53
+\f@nch@O@olf=\skip54
+\f@nch@O@orf=\skip55
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen126
+\lightrulewidth=\dimen127
+\cmidrulewidth=\dimen128
+\belowrulesep=\dimen129
+\belowbottomsep=\dimen130
+\aboverulesep=\dimen131
+\abovetopsep=\dimen132
+\cmidrulesep=\dimen133
+\cmidrulekern=\dimen134
+\defaultaddspace=\dimen135
+\@cmidla=\count112
+\@cmidlb=\count113
+\@aboverulesep=\dimen136
+\@belowrulesep=\dimen137
+\@thisruleclass=\count114
+\@lastruleclass=\count115
+\@thisrulewidth=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count116
+\lst@gtempboxa=\box28
+\lst@token=\toks21
+\lst@length=\count117
+\lst@currlwidth=\dimen139
+\lst@column=\count118
+\lst@pos=\count119
+\lst@lostspace=\dimen140
+\lst@width=\dimen141
+\lst@newlines=\count120
+\lst@lineno=\count121
+\lst@maxwidth=\dimen142
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count122
+\lst@skipnumbers=\count123
+\lst@framebox=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen143
+\captionmargin@=\dimen144
+\captionwidth=\dimen145
+\caption@tempdima=\dimen146
+\caption@indent=\dimen147
+\caption@parindent=\dimen148
+\caption@hangindent=\dimen149
+)
+\c@ContinuedFloat=\count124
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count125
+\c@subtable=\count126
+)
+
+! LaTeX Error: File `appendix.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+
+! LaTeX Error: Unknown option `toc' for package `appendix'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \usepackage
+                [dvipsnames]{xcolor}
+? H
+The option `toc' was not declared in package `appendix', perhaps you
+misspelled its name. Try typing  <return>  to proceed.
+? 
+
+! LaTeX Error: Unknown option `page' for package `appendix'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \usepackage
+                [dvipsnames]{xcolor}
+? 
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+
+! LaTeX Error: File `biblatex.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+
+! LaTeX Error: Unknown option `sorting=none' for package `biblatex'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \addbibresource
+                    {references.bib}
+? 
+! Undefined control sequence.
+<recently read> \addbibresource 
+                                
+l.15 \addbibresource
+                    {references.bib}
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \addbibresource{r
+                      eferences.bib}
+? 
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count127
+\scratchdimen=\dimen150
+\scratchbox=\box30
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen151
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 22.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count133
+)
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
+
+(./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+\c@lstlisting=\count134
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \begin{minted}
+                   [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 horse_
+           images_path = sorted(glob.glob('horses/*.png'))
+? 
+! You can't use `macro parameter character #' in math mode.
+l.54 ... = np.asarray(img, dtype=float) / 255.0  #
+                                                   Normalize pixel values to...
+
+? 
+! You can't use `macro parameter character #' in math mode.
+l.56 horses = np.array(horses)  #
+                                  shape: (327, 128*128)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.57 
+     
+? 
+
+Overfull \hbox (193.6442pt too wide) in paragraph at lines 50--57
+\OML/cmm/m/it/9 Image:open\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 img[]ath\OT1/cmr/m/n/
+9 )\OML/cmm/m/it/9 :convert\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 
+)\OML/cmm/m/it/9 img[]rray \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 np:asarray\OT1/cmr/
+m/n/9 (\OML/cmm/m/it/9 img; dtype \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 float\OT1/cm
+r/m/n/9 )\OML/cmm/m/it/9 =\OT1/cmr/m/n/9 255\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 0\O
+ML/cmm/m/it/9 Normalizepixelvaluesto\OT1/cmr/m/n/9 [0\OML/cmm/m/it/9 ; \OT1/cmr
+/m/n/9 1]\OML/cmm/m/it/9 horses:append\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 img[]rray
+:flatten\OT1/cmr/m/n/9 ())\OML/cmm/m/it/9 horses \OT1/cmr/m/n/9 =
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.58 bird_
+          image_path = 'bird.png'
+? 
+! You can't use `macro parameter character #' in math mode.
+l.61 bird_vector = bird_array.flatten()  #
+                                           Flatten bird image
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 \end{minted}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.62 \end{minted}
+                 
+? 
+
+Overfull \hbox (54.80241pt too wide) in paragraph at lines 58--63
+[]\OT1/cmr/m/n/9 bird$[]\OML/cmm/m/it/9 mage[]ath \OT1/cmr/m/n/9 =[] \OML/cmm/m
+/it/9 bird:png[]bird[]mg \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 Image:open\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 bird[]mage[]ath\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 :convert\OT
+1/cmr/m/n/9 ([]\OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 bird[]rray \O
+T1/cmr/m/n/9 = \OML/cmm/m/it/9 np:asarray\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]
+mg; dtype \OT1/cmr/m/n/9 =
+ []
+
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \begin{minted}
+                   [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.69 mean_
+          horse = np.mean(horses, axis=0)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.70 
+     
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.71 horses_
+            centered = horses - mean_horse
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 \end{minted}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.72 \end{minted}
+                 
+? 
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 \begin{minted}
+                   [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.79 U, S, VT = np.linalg.svd(horses_
+                                     centered, full_matrices=False)
+? 
+! You can't use `macro parameter character #' in math mode.
+l.80 V = VT.T  #
+                 Principal components (eigenvectors)
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 \end{minted}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.81 \end{minted}
+                 
+? 
+
+Overfull \hbox (140.43002pt too wide) in paragraph at lines 78--82
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 ,frame=single]python U, S, VT = np.l
+inalg.svd(horses$[]\OML/cmm/m/it/9 entered; full[]atrices \OT1/cmr/m/n/9 = \OML
+/cmm/m/it/9 False\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 V \OT1/cmr/m/n/9 = \OML/cmm/m/
+it/9 VT:TPrincipalcomponents\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 eigenvectors\OT1/cm
+r/m/n/9 )$ 
+ []
+
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 \begin{minted}
+                   [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.88 remaining_
+               singular_values = S[2:]  # discard the first two largest sing...
+
+? 
+! You can't use `macro parameter character #' in math mode.
+l.88 remaining_singular_values = S[2:]  #
+                                          discard the first two largest sing...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \end{minted}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.95 \end{minted}
+                 
+? 
+
+Overfull \hbox (81.81657pt too wide) in paragraph at lines 87--96
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 ,frame=single]python remaining$[]\OM
+L/cmm/m/it/9 ingular[]alues \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 S\OT1/cmr/m/n/9 [2
+ :]\OML/cmm/m/it/9 discardthefirsttwolargestsingularvaluesplt:figure\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 figsize \OT1/cmr/m/n/9 =
+ []
+
+
+Overfull \hbox (270.5092pt too wide) in paragraph at lines 87--96
+\OT1/cmr/m/n/9 (6\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 4))\OML/cmm/m/it/9 plt:plot\O
+T1/cmr/m/n/9 (\OML/cmm/m/it/9 remaining[]ingular[]alues; marker \OT1/cmr/m/n/9 
+=[] \OML/cmm/m/it/9 o[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 
+([]\OML/cmm/m/it/9 RemainingSingularValues\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 Sorte
+dinDecreasingOrder\OT1/cmr/m/n/9 )[])\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 (
+[]\OML/cmm/m/it/9 Index[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n
+/9 ([]\OML/cmm/m/it/9 SingularValue[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:show\O
+T1/cmr/m/n/9 ()$ 
+ []
+
+<remaining_singular_values.png, id=5, 433.62pt x 289.08pt>
+File: remaining_singular_values.png Graphic file (type png)
+<use remaining_singular_values.png>
+Package pdftex.def Info: remaining_singular_values.png  used on input line 99. 
+on input line 99.
+Package pdftex.def Info: Requested size: 271.7835pt x 181.19945pt on input line
+ 99.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 \begin{minted}
+                    [fontsize=\small,frame=single]{python}
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.109 pcs = V[:, :2]  #
+                        first two principal components
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.110 horse_
+            projections = horses_centered.dot(pcs)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.111 
+      
+? 
+
+Overfull \hbox (48.41397pt too wide) in paragraph at lines 108--111
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 ,frame=single]python pcs = V[:, :2] 
+ first two prin-ci-pal com-po-nents horse$[]\OML/cmm/m/it/9 rojections \OT1/cmr
+/m/n/9 = \OML/cmm/m/it/9 horses[]entered:dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs
+\OT1/cmr/m/n/9 )$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.113 plt.scatter(horse_
+                        projections[:,0], horse_projections[:,1], c='black',...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.119 \end{minted}
+                  
+? 
+
+Overfull \hbox (418.16295pt too wide) in paragraph at lines 112--120
+[]\OT1/cmr/m/n/9 plt.figure(figsize=(6,4)) plt.scatter(horse$[]\OML/cmm/m/it/9 
+rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0]\OML/cmm/m/it/9 ;
+ horse[]rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm/
+m/it/9 ; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/m/n/9 =[]
+ \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/
+9 ([]\OML/cmm/m/it/9 ProjectionofHorsesontoFirst\OT1/cmr/m/n/9 2\OML/cmm/m/it/9
+ PCs[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it
+/9 PC\OT1/cmr/m/n/9 1[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/
+it/9 PC\OT1/cmr/m/n/9 2[])\OML/cmm/m/it/9 plt:legend\OT1/cmr/m/n/9 ()\OML/cmm/m
+/it/9 plt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+<horse_projections.png, id=8, 433.62pt x 289.08pt>
+File: horse_projections.png Graphic file (type png)
+<use horse_projections.png>
+Package pdftex.def Info: horse_projections.png  used on input line 125. on inpu
+t line 125.
+Package pdftex.def Info: Requested size: 271.7835pt x 181.19945pt on input line
+ 125.
+[1
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 \begin{minted}
+                    [fontsize=\small,frame=single]{python}projection in red 'x'
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.135 bird_
+           centered = bird_vector - mean_horse
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.137 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.139 plt.scatter(horse_
+                        projections[:,0], horse_projections[:,1], c='black',...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.146 \end{minted}
+                  
+? 
+
+Overfull \hbox (206.21988pt too wide) in paragraph at lines 138--147
+[]\OT1/cmr/m/n/9 plt.figure(figsize=(6,4)) plt.scatter(horse$[]\OML/cmm/m/it/9 
+rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0]\OML/cmm/m/it/9 ;
+ horse[]rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm/
+m/it/9 ; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/m/n/9 =[]
+ \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:scatter\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 bird[]rojection\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 ; bird[]r
+ojection\OT1/cmr/m/n/9 [1]\OML/cmm/m/it/9 ; c \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (202.50525pt too wide) in paragraph at lines 138--147
+\OML/cmm/m/it/9 red[]; marker \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 x[]; s \OT1/cm
+r/m/n/9 = 100\OML/cmm/m/it/9 ; label \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 Bird[]\
+OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Horse
+ProjectionsandBirdProjectiononFirst\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 PCs[]\OT1/cm
+r/m/n/9 )\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 PC\OT1/cmr
+/m/n/9 1[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 PC\OT1/c
+mr/m/n/9 2[])\OML/cmm/m/it/9 plt:legend\OT1/cmr/m/n/9 ()\OML/cmm/m/it/9 plt:sho
+w\OT1/cmr/m/n/9 ()$ 
+ []
+
+<horse_bird_projection.png, id=31, 433.62pt x 289.08pt>
+File: horse_bird_projection.png Graphic file (type png)
+<use horse_bird_projection.png>
+Package pdftex.def Info: horse_bird_projection.png  used on input line 150. on 
+input line 150.
+Package pdftex.def Info: Requested size: 271.7835pt x 181.19945pt on input line
+ 150.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./remaining_singular_values.png> <./horse_projections.png>]
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.159 \begin{minted}
+                    [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 horse070_
+               img = Image.open('horses/horse070.png').convert('L')
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.163 
+      
+? 
+
+Overfull \hbox (26.12822pt too wide) in paragraph at lines 159--163
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 ,frame=single]python horse070$[]\OML
+/cmm/m/it/9 mg \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 Image:open\OT1/cmr/m/n/9 ([]\OM
+L/cmm/m/it/9 horses=horse\OT1/cmr/m/n/9 070\OML/cmm/m/it/9 :png[]\OT1/cmr/m/n/9
+ )\OML/cmm/m/it/9 :convert\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 )
+\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 070[]\OML/cmm/m/it/9 rray \OT1/cmr/m/n/9 =
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.164 #
+        Center the horse070 image
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.165 horse070_
+               centered = horse070_vector - mean_horse
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.166 
+      
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.167 #
+        Reconstruct using first 32 PCs
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.168 num_
+          pcs = 32
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.173 
+      
+? 
+
+Overfull \hbox (91.56902pt too wide) in paragraph at lines 167--173
+[]\OT1/cmr/m/n/9 Reconstruct us-ing first 32 PCs num$[]\OML/cmm/m/it/9 cs \OT1/
+cmr/m/n/9 = 32\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2 = \OML/cmm/m/it/9 V\OT1/cmr
+/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 num[]cs\OT1/cmr/m/n
+/9 ]\OML/cmm/m/it/9 scores[]\OT1/cmr/m/n/9 2 = \OML/cmm/m/it/9 horse\OT1/cmr/m/
+n/9 070[]\OML/cmm/m/it/9 entered:dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/c
+mr/m/n/9 2)\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 070[]\OML/cmm/m/it/9 econstructe
+d \OT1/cmr/m/n/9 =
+ []
+
+
+Overfull \hbox (1.37444pt too wide) in paragraph at lines 167--173
+\OML/cmm/m/it/9 mean[]orse \OT1/cmr/m/n/9 + \OML/cmm/m/it/9 scores[]\OT1/cmr/m/
+n/9 2\OML/cmm/m/it/9 :dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2\
+OML/cmm/m/it/9 :T\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 070[]\OML/
+cmm/m/it/9 econstructed[]inary \OT1/cmr/m/n/9 = (\OML/cmm/m/it/9 horse\OT1/cmr/
+m/n/9 070[]\OML/cmm/m/it/9 econstructed > \OT1/cmr/m/n/9 0\OML/cmm/m/it/9 :\OT1
+/cmr/m/n/9 5)\OML/cmm/m/it/9 :astype\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 float\OT1/c
+mr/m/n/9 )$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.174 #
+        Display the original and reconstructed binary images
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.176 axs[0].imshow(horse070_
+                             array.reshape(128,128), cmap='gray')
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.183 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.183 \end{minted}
+                  
+? 
+
+Overfull \hbox (167.1164pt too wide) in paragraph at lines 174--184
+[]\OT1/cmr/m/n/9 Display the orig-i-nal and re-con-structed bi-nary im-ages fig
+, axs = plt.subplots(1, 2, fig-size=(8,4)) axs[0].imshow(horse070$[]\OML/cmm/m/
+it/9 rray:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML/c
+mm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (83.63217pt too wide) in paragraph at lines 174--184
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 OriginalHorse\OT1/cmr/m
+/n/9 070[])\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 :axis\OT1/cmr/m
+/n/9 ([]\OML/cmm/m/it/9 off[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 
+[1]\OML/cmm/m/it/9 :imshow\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 0
+70[]\OML/cmm/m/it/9 econstructed[]inary:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it
+/9 ; \OT1/cmr/m/n/9 128)\OML/cmm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+<horse070_reconstruction.png, id=40, 578.16pt x 289.08pt>
+File: horse070_reconstruction.png Graphic file (type png)
+<use horse070_reconstruction.png>
+Package pdftex.def Info: horse070_reconstruction.png  used on input line 187. o
+n input line 187.
+Package pdftex.def Info: Requested size: 362.37569pt x 181.18622pt on input lin
+e 187.
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \begin{minted}
+                    [fontsize=\small,frame=single]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.197 bird_
+           reconstructed = mean_horse + (bird_centered.dot(pcs_32)).dot(pcs_...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.199 
+      
+? 
+
+Overfull \hbox (96.47723pt too wide) in paragraph at lines 196--199
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 ,frame=single]python bird$[]\OML/cmm
+/m/it/9 econstructed \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 mean[]orse \OT1/cmr/m/n/9
+ + (\OML/cmm/m/it/9 bird[]entered:dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/
+cmr/m/n/9 2))\OML/cmm/m/it/9 :dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/
+m/n/9 2\OML/cmm/m/it/9 :T\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 bird[]econstructed[]in
+ary \OT1/cmr/m/n/9 =
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.200 #
+        Display the original and reconstructed binary bird images
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.202 axs[0].imshow(bird_
+                         array.reshape(128,128), cmap='gray')
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.209 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.209 \end{minted}
+                  
+? 
+
+Overfull \hbox (167.08237pt too wide) in paragraph at lines 200--210
+[]\OT1/cmr/m/n/9 Display the orig-i-nal and re-con-structed bi-nary bird im-age
+s fig, axs = plt.subplots(1, 2, fig-size=(8,4)) axs[0].imshow(bird$[]\OML/cmm/m
+/it/9 rray:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML/
+cmm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (43.33884pt too wide) in paragraph at lines 200--210
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 OriginalBird[]\OT1/cmr/
+m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 :axis\OT1/cmr/m/n/9
+ ([]\OML/cmm/m/it/9 off[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [1]\
+OML/cmm/m/it/9 :imshow\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]econstructed[]inary
+:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML/cmm/m/it/9
+ ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+<bird_reconstruction.png, id=41, 578.16pt x 289.08pt>
+File: bird_reconstruction.png Graphic file (type png)
+<use bird_reconstruction.png>
+Package pdftex.def Info: bird_reconstruction.png  used on input line 213. on in
+put line 213.
+Package pdftex.def Info: Requested size: 362.37569pt x 181.18622pt on input lin
+e 213.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./horse_bird_projection.png> <./horse070_reconstruction.png>]
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \begin{minted}
+                    [fontsize=\small, frame=single,breaklines]{python}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.224 horse_
+            reconstructions_32 = mean_horse + (horses_centered.dot(pcs_32))....
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.227 
+      
+? 
+
+Overfull \hbox (6.033pt too wide) in paragraph at lines 222--227
+[]\OT1/cmr/m/n/10 [fontsize=\OT1/cmr/m/n/9 , frame=single,breaklines]python re-
+con-struct-ing each im-age us-ing 32 PCs. horse$[]\OML/cmm/m/it/9 econstruction
+s[]\OT1/cmr/m/n/9 2 =
+ []
+
+
+Overfull \hbox (86.28018pt too wide) in paragraph at lines 222--227
+\OML/cmm/m/it/9 mean[]orse \OT1/cmr/m/n/9 + (\OML/cmm/m/it/9 horses[]entered:do
+t\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2))\OML/cmm/m/it/9 :dot\OT
+1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 :T\OT1/cmr/m/
+n/9 )\OML/cmm/m/it/9 distances[]orses \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 np:linal
+g:norm\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 horses[]entered \OMS/cmsy/m/n/9 ^^@ \OT1/
+cmr/m/n/9 (\OML/cmm/m/it/9 horse[]econstructions[]\OT1/cmr/m/n/9 2 \OMS/cmsy/m/
+n/9 ^^@
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.228 #
+        On the same graph, plot the computed distances vs the coordinates of...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.230 plt.scatter(horse_
+                        projections[:,1], distances_horses, c='black', label...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.237 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.237 \end{minted}
+                  
+? 
+
+Overfull \hbox (152.59528pt too wide) in paragraph at lines 228--238
+\OT1/cmr/m/n/9 plt.figure(figsize=(6,4)) plt.scatter(horse$[]\OML/cmm/m/it/9 ro
+jections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm/m/it/9 ; d
+istances[]orses; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/m
+/n/9 =[] \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:scatter\OT
+1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]rojection\OT1/cmr/m/n/9 [1]\OML/cmm/m/it/9 ;
+ distance[]ird; c \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (131.85301pt too wide) in paragraph at lines 228--238
+\OML/cmm/m/it/9 red[]; marker \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 x[]; s \OT1/cm
+r/m/n/9 = 100\OML/cmm/m/it/9 ; label \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 Bird[]\
+OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Dista
+ncesvs:Projectionon\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 ndPC[]\OT1/cmr/m/n/9 )\OML/c
+mm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 ProjectiononPC\OT1/cmr/m/
+n/9 2[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Distanceto\
+OT1/cmr/m/n/9 32 \OMS/cmsy/m/n/9 ^^@
+ []
+
+<distances_vs_pc2.png, id=54, 433.62pt x 289.08pt>
+File: distances_vs_pc2.png Graphic file (type png)
+<use distances_vs_pc2.png>
+Package pdftex.def Info: distances_vs_pc2.png  used on input line 241. on input
+ line 241.
+Package pdftex.def Info: Requested size: 271.7835pt x 181.19945pt on input line
+ 241.
+[4 <./bird_reconstruction.png> <./distances_vs_pc2.png>]
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 \begin{minted}
+                    [fontsize=\small,frame=single,breaklines]{python}
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.251 #
+        Plot the histogram of the distances obtained at f) for the horses
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.253 plt.hist(distances_
+                         horses, bins=20, color='black')
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.258 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.258 \end{minted}
+                  
+? 
+
+Overfull \hbox (6.89243pt too wide) in paragraph at lines 250--259
+\OT1/cmr/m/n/9 plt.figure(figsize=(6,4)) plt.hist(distances$[]\OML/cmm/m/it/9 o
+rses; bins \OT1/cmr/m/n/9 = 20\OML/cmm/m/it/9 ; color \OT1/cmr/m/n/9 =[] \OML/c
+mm/m/it/9 black[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OM
+L/cmm/m/it/9 HistogramofDistancesto\OT1/cmr/m/n/9 32 \OMS/cmsy/m/n/9 ^^@
+ []
+
+<hist_distances_horses.png, id=64, 433.62pt x 289.08pt>
+File: hist_distances_horses.png Graphic file (type png)
+<use hist_distances_horses.png>
+Package pdftex.def Info: hist_distances_horses.png  used on input line 262. on 
+input line 262.
+Package pdftex.def Info: Requested size: 271.7835pt x 181.19945pt on input line
+ 262.
+[5 <./hist_distances_horses.png>]
+
+! LaTeX Error: Environment minted undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 \begin{minted}
+                    [fontsize=\small, breaklines, frame=single]{python}
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.277 #
+        1. Load the horse images and bird image
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.278 #
+        Assuming 'horses' directory contains horse images named 'horse001.pn...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.279 horse_
+            images_path: list[str] = sorted(glob.glob('horses/*.png'))
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.281 
+      
+? 
+
+Overfull \hbox (2.39648pt too wide) in paragraph at lines 277--281
+\OT1/cmr/m/n/9 'horse001.png' to 'horse327.png' horse$[]\OML/cmm/m/it/9 mages[]
+ath \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 list\OT1/cmr/m/n/9 [\OML/cmm/m/it/9 str\OT
+1/cmr/m/n/9 ] = \OML/cmm/m/it/9 sorted\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 glob:glob
+\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 horses= \OMS/cmsy/m/n/9 ^^C \OML/cmm/m/it/9 :
+png[]\OT1/cmr/m/n/9 ))\OML/cmm/m/it/9 bird[]mage[]ath \OT1/cmr/m/n/9 =[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.283 for img_
+              path in horse_images_path:
+? 
+! You can't use `macro parameter character #' in math mode.
+l.285     #
+            Normalize pixel values to [0,1]
+? 
+! You can't use `macro parameter character #' in math mode.
+l.288 horses = np.array(horses)  #
+                                   shape: (327, 128*128)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.289 
+      
+? 
+
+Overfull \hbox (264.76477pt too wide) in paragraph at lines 282--289
+[]\OT1/cmr/m/n/9 horses: list[np.ndarray] | np.ndarray = [] for img$[]\OML/cmm/
+m/it/9 athinhorse[]mages[]ath \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 img \OT1/cmr/m/n
+/9 : \OML/cmm/m/it/9 Image:Image \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 Image:open\OT
+1/cmr/m/n/9 (\OML/cmm/m/it/9 img[]ath\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 :convert\O
+T1/cmr/m/n/9 ([]\OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 Normalizepix
+elvaluesto\OT1/cmr/m/n/9 [0\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm/m/it/9 i
+mg[]rray \OT1/cmr/m/n/9 =
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.290 bird_
+           img: Image.Image = Image.open(bird_image_path).convert('L')
+? 
+! You can't use `macro parameter character #' in math mode.
+l.292 ...ctor:np.ndarray = bird_array.flatten()  #
+                                                   Flatten bird image
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.293 
+      
+? 
+
+Overfull \hbox (7.6076pt too wide) in paragraph at lines 290--293
+[]\OT1/cmr/m/n/9 bird$[]\OML/cmm/m/it/9 mg \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 Ima
+ge:Image \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 Image:open\OT1/cmr/m/n/9 (\OML/cmm/m/
+it/9 bird[]mage[]ath\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 :convert\OT1/cmr/m/n/9 ([]\
+OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 bird[]rray \OT1/cmr/m/n/9 = \
+OML/cmm/m/it/9 np:asarray\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]mg; dtype \OT1/c
+mr/m/n/9 =
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.294 #
+        2. Compute the mean of the horse dataset
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.295 mean_
+           horse:np.ndarray = np.mean(horses, axis=0)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.296 
+      
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.297 #
+        3. Center the horse data by subtracting the mean
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.298 horses_
+             centered = horses - mean_horse
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.299 
+      
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.300 #
+        4. Perform SVD on the horse images (PCA)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.301 U, S, VT = np.linalg.svd(horses_
+                                      centered, full_matrices=False)
+? 
+! You can't use `macro parameter character #' in math mode.
+l.302 V = VT.T  #
+                  Principal components (eigenvectors)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.303 
+      
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.304 #
+        a) Discard the two largest singular values and plot the remaining si...
+
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.305 #
+        discard the first two largest singular values
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.306 remaining_
+                singular_values:np.ndarray = S[2:]
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.314 
+      
+? 
+
+Overfull \hbox (92.23178pt too wide) in paragraph at lines 304--314
+\OT1/cmr/m/n/9 sin-gu-lar val-ues remaining$[]\OML/cmm/m/it/9 ingular[]alues \O
+T1/cmr/m/n/9 : \OML/cmm/m/it/9 np:ndarray \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 S\OT
+1/cmr/m/n/9 [2 :]\OML/cmm/m/it/9 plt:figure\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 figs
+ize \OT1/cmr/m/n/9 = (6\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 4))\OML/cmm/m/it/9 plt:
+plot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 remaining[]ingular[]alues; marker \OT1/cmr/
+m/n/9 =[]
+ []
+
+
+Overfull \hbox (238.76134pt too wide) in paragraph at lines 304--314
+\OML/cmm/m/it/9 o[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\
+OML/cmm/m/it/9 RemainingSingularValues\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 SortedinD
+ecreasingOrder\OT1/cmr/m/n/9 )[])\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\O
+ML/cmm/m/it/9 Index[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 (
+[]\OML/cmm/m/it/9 SingularValue[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:savefig\OT
+1/cmr/m/n/9 ([]\OML/cmm/m/it/9 remaining[]ingular[]alues:png[]\OT1/cmr/m/n/9 )\
+OML/cmm/m/it/9 plt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.315 #
+        b) Project the horses onto the first two principal components and plot
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.316 pcs:np.ndarray = V[:, :2]  #
+                                   first two principal components
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.317 horse_
+            projections:np.ndarray = horses_centered.dot(pcs)  # shape: (327...
+
+? 
+! You can't use `macro parameter character #' in math mode.
+l.317 ...:np.ndarray = horses_centered.dot(pcs)  #
+                                                   shape: (327, 2)
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.318 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.320 plt.scatter(horse_
+                        projections[:, 0],
+? 
+! You can't use `macro parameter character #' in math mode.
+l.326 plt.savefig('horse_projections.png')  #
+                                              Save plot
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.328 
+      
+? 
+
+Overfull \hbox (600.82417pt too wide) in paragraph at lines 319--328
+[]\OT1/cmr/m/n/9 plt.figure(figsize=(6, 4)) plt.scatter(horse$[]\OML/cmm/m/it/9
+ rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0]\OML/cmm/m/it/9 
+; horse[]rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm
+/m/it/9 ; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/m/n/9 =[
+] \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n
+/9 ([]\OML/cmm/m/it/9 ProjectionofHorsesontoFirst\OT1/cmr/m/n/9 2\OML/cmm/m/it/
+9 PCs[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/i
+t/9 PC\OT1/cmr/m/n/9 1[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m
+/it/9 PC\OT1/cmr/m/n/9 2[])\OML/cmm/m/it/9 plt:legend\OT1/cmr/m/n/9 ()\OML/cmm/
+m/it/9 plt:savefig\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 horse[]rojections:png[]\OT1
+/cmr/m/n/9 )\OML/cmm/m/it/9 Saveplotplt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.329 #
+        c) On the same graph, plot the horse projections in black and bird p...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.330 bird_
+           centered = bird_vector - mean_horse
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.332 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.334 plt.scatter(horse_
+                        projections[:, 0],
+? 
+! You can't use `macro parameter character #' in math mode.
+l.342 plt.savefig('horse_bird_projection.png')  #
+                                                  Save plot
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.344 
+      
+? 
+
+Overfull \hbox (208.48099pt too wide) in paragraph at lines 333--344
+[]\OT1/cmr/m/n/9 plt.figure(figsize=(6, 4)) plt.scatter(horse$[]\OML/cmm/m/it/9
+ rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0]\OML/cmm/m/it/9 
+; horse[]rojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm
+/m/it/9 ; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/m/n/9 =[
+] \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:scatter\OT1/cmr/m
+/n/9 (\OML/cmm/m/it/9 bird[]rojection\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 ; bird[]
+rojection\OT1/cmr/m/n/9 [1]\OML/cmm/m/it/9 ; c \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (394.77089pt too wide) in paragraph at lines 333--344
+\OML/cmm/m/it/9 red[]; marker \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 x[]; s \OT1/cm
+r/m/n/9 = 100\OML/cmm/m/it/9 ; label \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 Bird[]\
+OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Horse
+ProjectionsandBirdProjectiononFirst\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 PCs[]\OT1/cm
+r/m/n/9 )\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 PC\OT1/cmr
+/m/n/9 1[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 PC\OT1/c
+mr/m/n/9 2[])\OML/cmm/m/it/9 plt:legend\OT1/cmr/m/n/9 ()\OML/cmm/m/it/9 plt:sav
+efig\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 horse[]ird[]rojection:png[]\OT1/cmr/m/n/9
+ )\OML/cmm/m/it/9 Saveplotplt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.345 #
+        d) Using the model, display the image 'horse070.png' and its binary ...
+
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.346 #
+        Find the horse070 image vector
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.347 horse070_
+               img: Image.Image = Image.open('horses/horse070.png').convert(...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.350 
+      
+? 
+
+Overfull \hbox (88.36269pt too wide) in paragraph at lines 345--350
+\OT1/cmr/m/n/9 0.5)  Find the horse070 im-age vec-tor horse070$[]\OML/cmm/m/it/
+9 mg \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 Image:Image \OT1/cmr/m/n/9 = \OML/cmm/m/i
+t/9 Image:open\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 horses=horse\OT1/cmr/m/n/9 070\
+OML/cmm/m/it/9 :png[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 :convert\OT1/cmr/m/n/9 ([]
+\OML/cmm/m/it/9 L[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 070[]\OM
+L/cmm/m/it/9 rray \OT1/cmr/m/n/9 =
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.351 #
+        Center the horse070 image
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.352 horse070_
+               centered = horse070_vector - mean_horse
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.353 
+      
+? 
+! You can't use `macro parameter character #' in vertical mode.
+l.354 #
+        Reconstruct using first 32 PCs
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.355 num_
+          pcs = 32
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.361 
+      
+? 
+
+Overfull \hbox (88.09201pt too wide) in paragraph at lines 354--361
+\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 070[]\OML/cmm/m/it/9 entered:dot\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2)\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 
+070[]\OML/cmm/m/it/9 econstructed \OT1/cmr/m/n/9 : \OML/cmm/m/it/9 np:ndarray \
+OT1/cmr/m/n/9 = \OML/cmm/m/it/9 mean[]orse \OT1/cmr/m/n/9 + \OML/cmm/m/it/9 sco
+res[]\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 :dot\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\
+OT1/cmr/m/n/9 2\OML/cmm/m/it/9 :T\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 horse\OT1/cmr/
+m/n/9 070[]\OML/cmm/m/it/9 econstructed[]inary \OT1/cmr/m/n/9 :
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.362 #
+        Display the original and reconstructed binary images
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.364 axs[0].imshow(horse070_
+                             array.reshape(128, 128), cmap='gray')
+? 
+! You can't use `macro parameter character #' in math mode.
+l.370 ...savefig('horse070_reconstruction.png')  #
+                                                   Save figure
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.372 
+      
+? 
+
+Overfull \hbox (169.3775pt too wide) in paragraph at lines 362--372
+[]\OT1/cmr/m/n/9 Display the orig-i-nal and re-con-structed bi-nary im-ages fig
+, axs = plt.subplots(1, 2, fig-size=(8, 4)) axs[0].imshow(horse070$[]\OML/cmm/m
+/it/9 rray:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML/
+cmm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (83.63217pt too wide) in paragraph at lines 362--372
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 OriginalHorse\OT1/cmr/m
+/n/9 070[])\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 :axis\OT1/cmr/m
+/n/9 ([]\OML/cmm/m/it/9 off[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 
+[1]\OML/cmm/m/it/9 :imshow\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 horse\OT1/cmr/m/n/9 0
+70[]\OML/cmm/m/it/9 econstructed[]inary:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it
+/9 ; \OT1/cmr/m/n/9 128)\OML/cmm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (103.78616pt too wide) in paragraph at lines 362--372
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [1]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 BinaryReconstruction\OT
+1/cmr/m/n/9 (32\OML/cmm/m/it/9 PCs\OT1/cmr/m/n/9 )[])\OML/cmm/m/it/9 axs\OT1/cm
+r/m/n/9 [1]\OML/cmm/m/it/9 :axis\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 off[]\OT1/cmr
+/m/n/9 )\OML/cmm/m/it/9 plt:savefig\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 horse\OT1/
+cmr/m/n/9 070[]\OML/cmm/m/it/9 econstruction:png[]\OT1/cmr/m/n/9 )\OML/cmm/m/it
+/9 Savefigureplt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.373 #
+        e) Using the same model, display the bird image and its binary recon...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.374 bird_
+           reconstructed:np.ndarray = mean_horse + (bird_centered.dot(pcs_32...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.376 
+      
+? 
+
+Overfull \hbox (0.27464pt too wide) in paragraph at lines 373--376
+[]\OT1/cmr/m/n/9 e) Us-ing the same model, dis-play the bird im-age and its bi-
+nary re-con-struc-tion us-ing 32 PCs bird$[]\OML/cmm/m/it/9 econstructed \OT1/c
+mr/m/n/9 :
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.377 #
+        Display the original and reconstructed binary bird images
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.379 axs[0].imshow(bird_
+                         array.reshape(128, 128), cmap='gray')
+? 
+! You can't use `macro parameter character #' in math mode.
+l.385 plt.savefig('bird_reconstruction.png')  #
+                                                Save figure
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.387 
+      
+? 
+
+Overfull \hbox (169.34348pt too wide) in paragraph at lines 377--387
+[]\OT1/cmr/m/n/9 Display the orig-i-nal and re-con-structed bi-nary bird im-age
+s fig, axs = plt.subplots(1, 2, fig-size=(8, 4)) axs[0].imshow(bird$[]\OML/cmm/
+m/it/9 rray:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML
+/cmm/m/it/9 ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (43.33884pt too wide) in paragraph at lines 377--387
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 OriginalBird[]\OT1/cmr/
+m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [0]\OML/cmm/m/it/9 :axis\OT1/cmr/m/n/9
+ ([]\OML/cmm/m/it/9 off[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [1]\
+OML/cmm/m/it/9 :imshow\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]econstructed[]inary
+:reshape\OT1/cmr/m/n/9 (128\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 128)\OML/cmm/m/it/9
+ ; cmap \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (83.41608pt too wide) in paragraph at lines 377--387
+\OML/cmm/m/it/9 gray[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 axs\OT1/cmr/m/n/9 [1]\OML
+/cmm/m/it/9 :set[]itle\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 BinaryReconstruction\OT
+1/cmr/m/n/9 (32\OML/cmm/m/it/9 PCs\OT1/cmr/m/n/9 )[])\OML/cmm/m/it/9 axs\OT1/cm
+r/m/n/9 [1]\OML/cmm/m/it/9 :axis\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 off[]\OT1/cmr
+/m/n/9 )\OML/cmm/m/it/9 plt:savefig\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 bird[]econ
+struction:png[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 Savefigureplt:show\OT1/cmr/m/n/9
+ ()$ 
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.388 #
+        f) Compute the distances of the horses and the bird to the plane gen...
+
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.389 #
+        The plane generated by the 32 largest PCs can be approximated by rec...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.390 horse_
+            reconstructions_32 = mean_horse + \
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.396 
+      
+? 
+
+Overfull \hbox (88.17491pt too wide) in paragraph at lines 388--396
+\OT1/cmr/m/n/9 horse$[]\OML/cmm/m/it/9 econstructions[]\OT1/cmr/m/n/9 2 = \OML/
+cmm/m/it/9 mean[]orse \OT1/cmr/m/n/9 +  (\OML/cmm/m/it/9 horses[]entered:dot\OT
+1/cmr/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2))\OML/cmm/m/it/9 :dot\OT1/cm
+r/m/n/9 (\OML/cmm/m/it/9 pcs[]\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 :T\OT1/cmr/m/n/9 
+)\OML/cmm/m/it/9 distances[]orses \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 np:linalg:no
+rm\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 horses[]entered \OMS/cmsy/m/n/9 ^^@
+ []
+
+
+Overfull \hbox (16.12166pt too wide) in paragraph at lines 388--396
+\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 horse[]econstructions[]\OT1/cmr/m/n/9 2 \OMS/cm
+sy/m/n/9 ^^@ \OML/cmm/m/it/9 mean[]orse\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 ; axis \
+OT1/cmr/m/n/9 = 1)\OML/cmm/m/it/9 distance[]ird \OT1/cmr/m/n/9 = \OML/cmm/m/it/
+9 np:linalg:norm\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]entered \OMS/cmsy/m/n/9 ^
+^@ \OT1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]econstructed \OMS/cmsy/m/n/9 ^^@
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.397 #
+        On the same graph, plot the computed distances vs the coordinates of...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.399 plt.scatter(horse_
+                        projections[:, 1],
+? 
+! You can't use `macro parameter character #' in math mode.
+l.407 plt.savefig('distances_vs_pc2.png')  #
+                                             Save plot
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.409 
+      
+? 
+
+Overfull \hbox (154.85638pt too wide) in paragraph at lines 397--409
+\OT1/cmr/m/n/9 plt.figure(figsize=(6, 4)) plt.scatter(horse$[]\OML/cmm/m/it/9 r
+ojections\OT1/cmr/m/n/9 [:\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 1]\OML/cmm/m/it/9 ; 
+distances[]orses; c \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 black[]; label \OT1/cmr/
+m/n/9 =[] \OML/cmm/m/it/9 Horses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:scatter\O
+T1/cmr/m/n/9 (\OML/cmm/m/it/9 bird[]rojection\OT1/cmr/m/n/9 [1]\OML/cmm/m/it/9 
+; distance[]ird; c \OT1/cmr/m/n/9 =[]
+ []
+
+
+Overfull \hbox (131.85301pt too wide) in paragraph at lines 397--409
+\OML/cmm/m/it/9 red[]; marker \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 x[]; s \OT1/cm
+r/m/n/9 = 100\OML/cmm/m/it/9 ; label \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 Bird[]\
+OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Dista
+ncesvs:Projectionon\OT1/cmr/m/n/9 2\OML/cmm/m/it/9 ndPC[]\OT1/cmr/m/n/9 )\OML/c
+mm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 ProjectiononPC\OT1/cmr/m/
+n/9 2[])\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 Distanceto\
+OT1/cmr/m/n/9 32 \OMS/cmsy/m/n/9 ^^@
+ []
+
+! You can't use `macro parameter character #' in vertical mode.
+l.410 #
+        g) Plot the histogram of the distances obtained at f) for the horses
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.412 plt.hist(distances_
+                         horses, bins=20, color='black')
+? 
+! You can't use `macro parameter character #' in math mode.
+l.416 plt.savefig('hist_distances_horses.png')  #
+                                                  Save plot
+? 
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.418 \end{minted}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.418 \end{minted}
+                  
+? 
+
+Overfull \hbox (48.00279pt too wide) in paragraph at lines 410--419
+[]\OT1/cmr/m/n/9 g) Plot the his-togram of the dis-tances ob-tained at f) for t
+he horses plt.figure(figsize=(6, 4)) plt.hist(distances$[]\OML/cmm/m/it/9 orses
+; bins \OT1/cmr/m/n/9 =
+ []
+
+
+Overfull \hbox (287.4096pt too wide) in paragraph at lines 410--419
+\OT1/cmr/m/n/9 20\OML/cmm/m/it/9 ; color \OT1/cmr/m/n/9 =[] \OML/cmm/m/it/9 bla
+ck[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:title\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 
+HistogramofDistancesto\OT1/cmr/m/n/9 32 \OMS/cmsy/m/n/9 ^^@ \OML/cmm/m/it/9 PCP
+laneforHorses[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:xlabel\OT1/cmr/m/n/9 ([]\OML
+/cmm/m/it/9 Distance[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:ylabel\OT1/cmr/m/n/9 
+([]\OML/cmm/m/it/9 Frequency[]\OT1/cmr/m/n/9 )\OML/cmm/m/it/9 plt:savefig\OT1/c
+mr/m/n/9 ([]\OML/cmm/m/it/9 hist[]istances[]orses:png[]\OT1/cmr/m/n/9 )\OML/cmm
+/m/it/9 Saveplotplt:show\OT1/cmr/m/n/9 ()$ 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
+[6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
+ ) 
+Here is how much of TeX's memory you used:
+ 9066 strings out of 494917
+ 134690 string characters out of 6180698
+ 240783 words of memory out of 5000000
+ 12274 multiletter control sequences out of 15000+600000
+ 8127 words of font info for 30 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 36i,11n,43p,465b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb>
+Output written on main.pdf (6 pages, 286850 bytes).
+PDF statistics:
+ 119 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
